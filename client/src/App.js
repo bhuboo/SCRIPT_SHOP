@@ -1,21 +1,24 @@
 import './App.css';
+import { Route,Routes } from 'react-router-dom';
+import Landingpage from './Auth/Landing page/Landingpage';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Routes>
+        <Route path='/' element={<Landingpage/>} />
+       
+        
+        
+      </Routes>
+     
+      
+     
+    
+
     </div>
   );
 }
