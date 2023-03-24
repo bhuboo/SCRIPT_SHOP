@@ -1,119 +1,33 @@
-/* .NAv-bar{
-    display: flex;
-    margin-top: 25px;
-}
-.nav-ul1{
-    list-style: none;
-    margin-left: 120px;
-}
-.nav-ul1 a{
-    text-decoration: none;
-
-
-
-}
-.nav-ul2{
-    display: flex;
-    list-style: none;
-     margin-left: 10rem;
-   
-}
-.nav-ul2 a{
+.NAv-head{
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 30px;
     font-size: 18px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 30px;
-  
+    color: #53C352;
 }
-
-
-.NAv-ul1{
-    font-weight: 700;
-    font-size: 16px;
-}
-.NAv-btn{
-    height: 40px;
-    width: 80px;
-    font-size: 16px;
-    margin-left: 20px;
-    border-radius: 10px;
-    border: none;
-    background:#53C352 ;
-    color: white;
-    font-weight: 500;
-    margin-top: 5px;
-}
-.btn-link{
-    text-decoration: none;
-}
-
-.btn-div{
-    margin-left: 15rem;
+.NAV-a {
+  margin-left: 150px;
+    margin-top: 30px;
+   
     
-} */
-
-.nav-bar{
-   
-   
-   
-    display: flex;
 }
-.script-span{
-    margin-left: 250px;
-    font-size: 22px;
-
-}
-.Nav-ulbar{
-    display: flex;
-    margin-left: 130px;
-   
-
-   
-
-}
-.Nav-ulbar a {
+.NAV-a a{
     text-decoration: none;
-    font-size: 18px;
-    margin-left: 40px;
-}
-
-.NAv-btn{
-  
-    height: 30px;
-    width: 80px;
-    font-size: 16px;
     margin-left: 20px;
+    font-size: 16px;
+    color: #6d6a6a;
+    
+
+}
+.NAv-btn{
+    width: 80px;
+    height: 40px;
+    background-color: #53C352;
     border-radius: 10px;
     border: none;
-    background:#53C352 ;
     color: white;
-    font-weight: 500;
-    margin-top: 5px;
+    margin-left: 10px;
 }
-.btn-div{
-    margin-left: 200px;
-}
-@media (max-width:1024px){
-    .nav-bar{
-        overflow-x: hidden;
-    }
-    .script-span{
-        margin-left: 90px;
-        margin-top: 30px;
-        font-size: 20px;
-    }
-    .Nav-ulbar{
-         margin-left: 60px;
-    }
-    .Nav-ulbar a{
-        font-size: 18px;
-        text-align: center;
-        margin-top: 30px;
-
-    }
-    .btn-div{
-        margin-left: 60px;
-        margin-top: 20px;
-    }
-   
+.BTn-div{
+    margin-top: 20px;
 }
