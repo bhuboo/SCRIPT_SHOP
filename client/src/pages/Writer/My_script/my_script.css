@@ -1,0 +1,41 @@
+.hdscript{
+   text-align:start;
+   margin-left: 210px;
+}
+.card{
+    display: flex;
+    height: auto;
+    width: 1100px;
+    flex-wrap: wrap;
+    padding-left: 170px;
+    padding-bottom: 100px;
+}
+.matrixname{
+    text-align: center;
+    margin-top: 120px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.matrixcard{
+    margin-left: 40px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    background: #FEFEFF;
+    border: 1px solid #53C352;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.scriptbtn{
+padding: 10px 22px;
+color: #ffff;
+font-weight: 400;
+border: none;
+width: 149px;
+height: 38px;
+margin-left: 100px;
+margin-top: 70px;
+background: #53C352;
+border-radius: 5px;
+}

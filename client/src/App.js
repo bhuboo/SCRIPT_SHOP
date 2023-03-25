@@ -1,21 +1,25 @@
 import './App.css';
+import Login from './Auth/Login/Login';
+import {Routes,Route} from 'react-router-dom'
+import Update_pass from './Auth/Update Password/Update_pass';
+import My_script from './pages/Writer/My_script/My_script'
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Routes>
+      <Route path='/Login' element={<Login />} />
+      <Route path='/Update_pass' element={<Update_pass />} />
+      <Route path='/My_script' element={<My_script />} />
+    </Routes>
+    
+    
+    
+   
+     
     </div>
   );
 }

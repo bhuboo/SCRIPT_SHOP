@@ -1,0 +1,186 @@
+.frame-1{
+    background-color: rgba(83, 195, 82, 0.62);
+    height: 41rem;
+}
+.frame-2{
+    background-color:#ffff;
+    height: 41rem;
+}
+.loginimg1{
+    width: 60%;
+    margin-top: 200px;
+}
+.LgHd{
+    color: #ffff;
+   margin-right: 160px;
+}
+.Lgpara{
+    color: #FDFDFD;
+    text-align: start;
+    margin-left: 150px;
+    font-weight: 400;
+    font-size: 14px;
+}
+/* 2nd grid */
+.LgHd1{
+   margin-top: 200px;
+   margin-right: 200px;
+    }
+    .email{
+        width: 250px;
+        height: 30px;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 5px 10px;
+        border: 1px solid  #53C352;
+        border-radius: 10px;
+        text-align:left;
+        color: #959595;
+        }
+        .password{
+            width: 250px;
+            height: 30px;
+            font-weight: 600;
+            font-size: 12px;
+            padding: 5px 10px;
+            border: 1px solid  #53C352;
+            border-radius: 10px;
+            text-align:left;
+            color: #959595;
+            margin-top: 20px;
+        }
+        .loginbtn{
+            margin-top: 20px;
+            width: 270px;
+            border: none;
+            border-radius: 10px;
+            background-color:#53C352; 
+            color: white; 
+            height: 45px;
+            cursor: pointer;
+            }
+            .forgotpwd{
+                   margin-right: 150px;
+                   text-decoration: none;
+                   color: #959595; 
+               } 
+               .forgotpwd1{
+                  margin-right: 40px;
+                   text-decoration: none;
+                   color: #959595;
+               } 
+
+               /* media query */
+
+               @media (max-width: 1024px) {
+                .LgHd{
+                   margin-right: 110px;
+                   font-size: 22px;
+                }
+                .Lgpara{
+                    margin-left: 100px;
+                    font-size: 12px;
+                }
+               }
+               @media (max-width: 768px) {
+                .loginimg1{
+                    width: 50%;
+                    margin-top: 200px;
+                }
+                .LgHd{
+                   margin-right: 180px;
+                   font-size: 22px;
+                }
+                .Lgpara{
+                    margin-left: 196px;
+                    font-size: 12px;
+                }
+                .LgHd1{
+                      margin-left: 300px
+                     }
+                     .email{
+                       margin-left: 300px;
+                    }
+                         .password{
+                             margin-left: 300px;
+                         }
+                         .loginbtn{
+                             margin-left: 300px;
+                             }
+                             .forgotpwd{
+                               margin-left: 299px;
+                                } 
+                                .forgotpwd1{
+                                   margin-left: 294px;
+                                } 
+               }
+
+               @media (max-width: 768px) {
+                .loginimg1{
+                width: 400px;
+                  margin-right: 160px;
+                    margin-top: 90px;
+                }
+                .LgHd{
+                  margin-right: 360px;
+                    font-size: 18px;
+                 }
+                 .Lgpara{
+                     margin-left: 26px;
+                     font-size: 12px;
+                 }.LgHd1{
+                    margin-left: 290px;
+                    margin-top: 130px;
+                   }
+                   .email{
+                    margin-left: 220px;
+                     width: 180px;
+                     height: 20px;
+                  }
+                       .password{
+                           margin-left: 220px;
+                           width: 180px;
+                           height: 20px;
+                       }
+                       .loginbtn{
+                           margin-left:220px;
+                           width: 200px;
+                           height: 30px;
+                           }
+                           .forgotpwd{
+                               font-size: 15px;
+                           } 
+                           .forgotpwd1{
+                            font-size: 14px;
+                            margin-left: 270px;
+                           } 
+                           .firstdiv{
+                            margin-left: 206px;
+                           }
+                           .frame-1{
+                            height: 31rem;
+                           }
+                           .frame-2{
+                            height: 31rem;
+                           }
+               }
+               
+               @media (max-width: 425px) {
+                .LgHd{
+                    margin-right: 360px;
+                      font-size: 18px;
+                   }
+                .Lgpara{
+                    margin-left: 20px;
+                    font-size: 12px;
+                }
+                .forgotpwd{
+                   margin-right: 143px;
+                }
+                .frame-1{
+                    height: 30rem;
+                }
+                .frame-2{
+                    height: 29rem;
+                }
+               }
