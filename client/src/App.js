@@ -2,7 +2,7 @@ import './App.css';
 import Login from './Auth/Login/Login';
 import {Routes,Route} from 'react-router-dom'
 import Update_pass from './Auth/Update Password/Update_pass';
-import My_script from './pages/Writer/My_script/My_script'
+import My_script from './pages/Writer/My_script/my_script';
 
 
 

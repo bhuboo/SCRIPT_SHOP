@@ -1,6 +1,6 @@
 import React from 'react'
 import products from './product.json'
-import './My_script.css'
+import './my_script.css'
 import {Card} from '@mui/material'
 function my_script() {
   return (
