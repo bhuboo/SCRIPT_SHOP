@@ -3,7 +3,7 @@ const joi = require('joi');
 const express = require('express');
 const {DIRECTOR} = require('../../models/director');
 const router = express.Router();
-const genAuthToken = require('../../Token/genAuthToken');
+const genAuthToken = require('../../Token/genAuthTokenWriter');
 
 
 router.post("/",async (req,res)=>{

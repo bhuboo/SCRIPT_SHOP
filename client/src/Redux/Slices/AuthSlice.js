@@ -7,6 +7,7 @@ const initialState ={
     name:"",
     email:"",
     _id:"",
+    UserType:"",
     registerStatus:"",
     registerError:"",
 }
@@ -73,6 +74,7 @@ const AuthSlice =createSlice({
                     name: user.name,
                     email:user.email,
                     _id: user._id,
+                    UserType:user.Usertype,
                     registerStatus:"suceess"
                 }
             }else return state
@@ -98,6 +100,7 @@ const AuthSlice =createSlice({
                     name: user.name,
                     email:user.email,
                     _id: user._id,
+                    UserType:user.Usertype,
                     registerStatus:"suceess"
                 }
             }else return state

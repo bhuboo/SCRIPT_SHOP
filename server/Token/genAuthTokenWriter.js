@@ -8,6 +8,7 @@ const genAuthToken = (user) =>{
             _id:user._id,
             name:user.fname,
             email:user.email,
+            Usertype:"Writer",
         },
         secretkey
     );
