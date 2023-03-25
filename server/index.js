@@ -9,6 +9,7 @@ const directregister = require('./routes/director/register');
 const directorlogin = require('./routes/director/login');
 const adminlogin = require('./routes/admin/login');
 const Scriptpost = require('./routes/scripts/post');
+const Scriptlist = require('./routes/director/scriptlist')
 
 
 const port= process.env.PORT || 5000;
@@ -27,6 +28,7 @@ app.use("/api/Slogin",scriptlogin)
 // Director APIs
 app.use("/api/Dregister",directregister);
 app.use("/api/Dlogin",directorlogin);
+app.use("/api/Dscript",Scriptlist)
 
 // ADMIN APIS
 app.use("/api/Alogin",adminlogin);

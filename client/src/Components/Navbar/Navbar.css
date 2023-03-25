@@ -1,0 +1,33 @@
+.NAv-head{
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 30px;
+    font-size: 18px;
+    color: #53C352;
+}
+.NAV-a {
+  margin-left: 150px;
+    margin-top: 30px;
+   
+    
+}
+.NAV-a a{
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #6d6a6a;
+    
+
+}
+.NAv-btn{
+    width: 80px;
+    height: 40px;
+    background-color: #53C352;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+.BTn-div{
+    margin-top: 20px;
+}
