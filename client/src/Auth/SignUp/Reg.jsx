@@ -140,7 +140,7 @@ function Reg() {
                   className="textfield-Writer"
                   type="text"
                   id=""
-                  placeholder="Confirm PasswordX"
+                  placeholder="Confirm Password"
                   onChange={(e) =>
                     setWriter({ ...Writer, ConfirmPassword: e.target.value })
                   }
@@ -180,7 +180,7 @@ function Reg() {
                   className="textfield-Writer"
                   type="text"
                   id=""
-                  placeholder="Confirm PasswordX"
+                  placeholder="Confirm Password"
                   onChange={(e) =>
                     setDirector({
                       ...Director,

@@ -1,0 +1,76 @@
+.HomeG-div{
+    display: flex;
+}
+.LA-para1{
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 8rem;
+    margin-left: 10rem;
+    color: #6d6a6a;
+
+}
+.Home_Gpara{
+    margin-left:10rem ;
+    width: 200px;
+    height: 45px;
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background:#53C352 ;
+}
+
+
+
+.LAnd-img{
+    width: 500px;
+    
+  margin-top: 60px;
+  
+   
+    
+}
+.HomeG-h3{
+    text-align: center;
+    font-size: 28px;
+    margin-top: 8rem;
+    color: #6d6a6a;
+
+}
+.Homeg-cardp{
+    width: 17rem;
+    font-size: 22px;
+    text-align: left;
+    margin-left: 20px;
+    background-color: #53C352;
+    color: white;
+    font-weight: 500;
+    line-height: 30px;
+
+}
+.HomeG-card{
+    display: flex;
+    margin-left: 10rem;
+}
+.Card-G{
+   background-color: #53C352;
+   margin-left: 180px;
+   width: 21rem;
+
+ 
+   
+}
+.Card-G1{
+    width: 21rem;
+    background-color: #53C352;
+    margin-left: 90px;
+
+}
+.Card-G2{
+    width: 21rem;
+    background-color: #53C352;
+    margin-left: 0px;
+    
+}
