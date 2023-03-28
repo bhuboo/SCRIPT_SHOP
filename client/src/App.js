@@ -1,6 +1,6 @@
 import "./App.css";
 import Login from "./Auth/Login/Login";
-import { Routes, Route, Await, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import My_script from "./pages/Writer/My_script/my_script";
 import Landingpage from "./Auth/Landing page/Landingpage";
 import Reg from "./Auth/SignUp/Reg";
@@ -10,6 +10,7 @@ import Writer_Home from "./pages/Writer/Writer_Home/Writer_Home";
 import { useSelector } from "react-redux";
 
 
+import Director_Home from "./pages/Director/Director_Home/Director_Home";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/publish" element={<Publish />} />
         <Route path="/update-pass" element={<Update_pass />} />
         <Route path="/my-script" element={<My_script />} />
+        <Route path="/Director_Home" element={<Director_Home />} />
       </Routes>
     </div>
   );
