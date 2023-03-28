@@ -7,6 +7,7 @@ import Reg from "./Auth/SignUp/Reg";
 import Update_pass from "./Auth/Update Password/Update_pass";
 import Publish from "./pages/Writer/Publish/Publish";
 import Writer_Home from "./pages/Writer/Writer_Home/Writer_Home";
+import Director_Home from "./pages/Director/Director_Home/Director_Home";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/publish" element={<Publish />} />
         <Route path="/update-pass" element={<Update_pass />} />
         <Route path="/my-script" element={<My_script />} />
+        <Route path="/Director_Home" element={<Director_Home />} />
       </Routes>
     </div>
   );
