@@ -1,17 +1,62 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import loginimg from "../../Assets/Login/login.png";
 import logo1 from "../../Assets/Login/logo1.png";
 import logo2 from "../../Assets/Login/logo2.png";
 import logo3 from "../../Assets/Login/logo3.png";
 
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import "./Login.css";
+import { useDispatch,useSelector } from "react-redux";
+import { loginDirector, loginWriter } from "../../Redux/Slices/AuthSlice";
 
 function Login() {
 
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+
+  const auth = useSelector((state)=>state.auth)
+
   const [display, setDisplay] = useState(false);
   const [value, setvalue] = useState("Writer");
+
+  const [Writer, setWriter] = useState({
+    Email: "",
+    Password: "",
+  });
+
+  const [Director, setDirector] = useState({
+    Email: "",
+    Password: "",
+  });
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    if(value === "Writer"){
+      function handleSubmitWriter(e){
+        dispatch(loginWriter(Writer))
+      }
+      handleSubmitWriter(e)
+    }else if(value === "Director"){
+      function handleSubmitDirector(e){
+        dispatch(loginDirector(Director))
+      }
+      handleSubmitDirector(e)
+
+    }
+  }
+
+  useEffect(() => {
+    if(auth.UserType === "Writer"){
+      navigate('/WriterHome')
+    }else if(auth.UserType === "Director"){
+      navigate('/update-pass')
+    }
+  }, [auth.UserType,navigate])
+  
+
+  
+
 
   return (
     <>
@@ -49,8 +94,8 @@ function Login() {
           <img src={logo2} alt="" className="logo4img"/>
           <img src={logo3} alt="" className="logo5img"/>
           <div className="frame2-div">
-          <h2 className="LgHd1">Login</h2>
-          <form className="form-style">
+          <h2 className="LgHd1">{value=== "Writer" ? "Writer Login" : "Director Login" }</h2>
+          <form className="form-style" onSubmit={handleSubmit}>
           <div
               onClick={() => setDisplay(!display)}
               className={display ? "div-form1" : "div-form"}
@@ -76,7 +121,38 @@ function Login() {
               >
                 director
               </span>
-            </div>
+           </div>
+           {
+            value === "Writer" &&
+            <>
+            <input
+                  className="textfield-Writer"
+                  type="text"
+                  id=""
+                  placeholder="Email"
+                  onChange={(e) =>
+                    setWriter({ ...Writer, Email: e.target.value })
+                  }
+                />
+                <input
+                  className="textfield-Writer"
+                  type="text"
+                  id=""
+                  placeholder="Password"
+                  onChange={(e) =>
+                    setWriter({ ...Writer, Password: e.target.value })
+                  }
+                />
+                <input
+              className="button-submit-sign"
+              type="submit"
+              value={"Login"}
+              />
+              </>
+          } 
+           {
+            value === "Director" &&
+            <>
             <input
                   className="textfield-Writer"
                   type="text"
@@ -99,7 +175,9 @@ function Login() {
               className="button-submit-sign"
               type="submit"
               value={"Login"}
-            />
+              />
+              </>
+          } 
           </form>
           <h6 className="forgotpwd">Forgot password?</h6>
           <h6 className="forgotpwd1">Don’t have an Account? <Link className="signuplink" to={"/signup"}>Sign Up</Link></h6>

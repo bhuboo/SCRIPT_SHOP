@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Reg.css";
 import { Grid } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {registerUser,registerDirector} from "../../Redux/Slices/AuthSlice"
 import image from "../../Assets/Signup/signup(1).png";
 import image1 from "../../Assets/Signup/signup.png";
+import { useNavigate } from "react-router-dom";
 
 function Reg() {
   const dispatch = useDispatch();
+  const navigate=useNavigate();
+
+  const auth = useSelector((state)=>state.auth)
 
   const [display, setDisplay] = useState(false);
   const [value, setvalue] = useState("Writer");
@@ -41,6 +45,13 @@ function Reg() {
     }
   }
 
+  useEffect(() => {
+    if(auth.UserType === "Writer"){
+      navigate('/WriterHome')
+    }else if(auth.UserType === "Director"){
+      navigate('/update-pass')
+    }
+  }, [auth.UserType,navigate])
   
   return (
     <>

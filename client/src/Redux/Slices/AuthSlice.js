@@ -56,10 +56,68 @@ export const registerDirector = createAsyncThunk(
     }
 );
 
+export const loginDirector = createAsyncThunk(
+    "auth/loginDirector",
+    async (values,{rejectWithValue})=>{
+        try {
+            const token =await axios.post(`http://localhost:5000/api/Dlogin`,{
+                Email: values.Email,
+                Password: values.Password,
+            });
+
+            localStorage.setItem("token", token.data)
+
+            return token.data
+
+        } catch (error) {
+            console.log(error.response.data);
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
+
+
+export const loginWriter = createAsyncThunk(
+    "auth/loginWriter",
+    async (values,{rejectWithValue})=>{
+        try {
+            const token =await axios.post(`http://localhost:5000/api/Slogin`,{
+                Email: values.Email,
+                Password: values.Password,
+            });
+
+            localStorage.setItem("token", token.data)
+
+            return token.data
+
+        } catch (error) {
+            console.log(error.response.data);
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
 const AuthSlice =createSlice({
     name:"auth",
     initialState,
-    reducers:{},
+    reducers:{
+        loadUser(state,action){
+            const token = state.token || localStorage.getItem('token');
+
+            if(token){
+                const user = jwtDecode(token)
+
+                return{
+                    ...state,
+                    token: token,
+                    name: user.name,
+                    email:user.email,
+                    _id: user._id,
+                    UserType:user.Usertype,
+                    userLoaded:true
+                }
+            }
+        },
+    },
     extraReducers:(builder)=>{
         builder.addCase(registerUser.pending,(state,action)=>{
             return {...state,registerStatus:"pending"}
@@ -68,6 +126,7 @@ const AuthSlice =createSlice({
             if(action.payload){
                 
                 const user = jwtDecode(action.payload)
+
                 return{
                     ...state,
                     token: action.payload,
@@ -94,6 +153,7 @@ const AuthSlice =createSlice({
             if(action.payload){
                 
                 const user = jwtDecode(action.payload)
+
                 return{
                     ...state,
                     token: action.payload,
@@ -112,7 +172,63 @@ const AuthSlice =createSlice({
                 registerError:action.payload,
             }
         });
+        // Director login 
+        builder.addCase(loginDirector.pending,(state,action)=>{
+            return {...state,registerStatus:"pending"}
+        });
+        builder.addCase(loginDirector.fulfilled,(state,action)=>{
+            if(action.payload){
+                
+                const user = jwtDecode(action.payload)
+
+                return{
+                    ...state,
+                    token: action.payload,
+                    name: user.name,
+                    email:user.email,
+                    _id: user._id,
+                    UserType:user.Usertype,
+                    registerStatus:"suceess"
+                }
+            }else return state
+        });
+        builder.addCase(loginDirector.rejected,(state,action)=>{
+            return{
+                ...state,
+                registerStatus:"rejected",
+                registerError:action.payload,
+            }
+        });
+        // Writer login
+        builder.addCase(loginWriter.pending,(state,action)=>{
+            return {...state,registerStatus:"pending"}
+        });
+        builder.addCase(loginWriter.fulfilled,(state,action)=>{
+            if(action.payload){
+                
+                const user = jwtDecode(action.payload)
+
+                return{
+                    ...state,
+                    token: action.payload,
+                    name: user.name,
+                    email:user.email,
+                    _id: user._id,
+                    UserType:user.Usertype,
+                    registerStatus:"suceess"
+                }
+            }else return state
+        });
+        builder.addCase(loginWriter.rejected,(state,action)=>{
+            return{
+                ...state,
+                registerStatus:"rejected",
+                registerError:action.payload,
+            }
+        });
     }
 })
 
+
+export const {loadUser} = AuthSlice.actions
 export default AuthSlice.reducer;

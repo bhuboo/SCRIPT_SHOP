@@ -1,13 +1,25 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../../Components/Footer/Footer";
 import Navbar from "../../../Components/Navbar/Navbar";
 import "./Writer_Home.css";
 
 function Writer_Home() {
+
+  const navigate=useNavigate();
+  const {token} =useSelector((state)=>state.auth)
+
+
+  useEffect(()=>{
+    if(token === null){
+     navigate('/')
+    }
+   },[token])
   return (
     <>
-      <Navbar />
+      <Navbar Writer />
       <Grid container justifyContent={"center"}>
         <Grid
           item

@@ -1,33 +1,59 @@
-.NAv-head{
-    text-align: center;
-    margin-left: 80px;
-    margin-top: 30px;
-    font-size: 18px;
-    color: #53C352;
+.NAv-head {
+  text-align: center;
+  margin-left: 80px;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #53c352;
 }
 .NAV-a {
   margin-left: 150px;
-    margin-top: 30px;
-   
-    
+  margin-top: 30px;
 }
-.NAV-a a{
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 16px;
-    color: #6d6a6a;
-    
-
+.NAV-a a {
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #6d6a6a;
 }
-.NAv-btn{
-    width: 80px;
-    height: 40px;
-    background-color: #53C352;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    margin-left: 10px;
+.NAv-btn {
+  width: 80px;
+  height: 40px;
+  background-color: #53c352;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  margin-left: 10px;
 }
-.BTn-div{
-    margin-top: 20px;
+.BTn-div {
+  margin-top: 20px;
+}
+.Profile-Writer-head{
+    display: flex;
+    width: auto;
+    justify-content: space-evenly;
+}
+.Profile-Writer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90px;
+    height: auto;
+}
+.Profile-Writer-img {
+  width: 50px;
+  height: 50px;
+}
+.Profile-Writer-Arrow {
+  width: 30px;
+  height: 20px;
+}
+.Profile-Writer-button{
+    width: 126px;
+height: 44px;
+background: #53C352;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+color: #ffffff;
 }
