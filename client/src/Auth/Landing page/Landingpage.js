@@ -13,6 +13,8 @@ function Landingpage() {
   useEffect(()=>{
     if(UserType === 'Writer'){
       navigate('/WriterHome')
+    }else if(UserType === 'Director'){
+      navigate('/Director_Home')
     }
    },[UserType])
 

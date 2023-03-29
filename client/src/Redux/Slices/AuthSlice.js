@@ -117,7 +117,22 @@ const AuthSlice =createSlice({
                 }
             }
         },
+    logOutUser(state,action){
+        localStorage.removeItem("token");
+
+            return{
+                ...state,
+                token: null,
+                name: "",
+                email:"",
+                _id: "",
+                UserType:"",
+                registerStatus:"",
+                registerError:"",
+                userLoaded:true
+            }
     },
+},
     extraReducers:(builder)=>{
         builder.addCase(registerUser.pending,(state,action)=>{
             return {...state,registerStatus:"pending"}
@@ -230,5 +245,5 @@ const AuthSlice =createSlice({
 })
 
 
-export const {loadUser} = AuthSlice.actions
+export const {loadUser,logOutUser} = AuthSlice.actions
 export default AuthSlice.reducer;

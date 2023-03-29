@@ -9,12 +9,14 @@ import "./Writer_Home.css";
 function Writer_Home() {
 
   const navigate=useNavigate();
-  const {token} =useSelector((state)=>state.auth)
+  const {token,UserType} =useSelector((state)=>state.auth)
 
 
   useEffect(()=>{
     if(token === null){
      navigate('/')
+    }else if(UserType === 'Director'){
+      navigate('/Director_Home')
     }
    },[token])
   return (

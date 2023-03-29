@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import products from './product.json'
 import {Card, Grid} from '@mui/material'
 import './Director_Home.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 function Director_Home() {
+
+  const navigate=useNavigate();
+
+  const auth = useSelector((state)=>state.auth)
+
+  useEffect(() => {
+    if(auth.UserType === "Writer"){
+      navigate('/WriterHome')
+    }else if(auth.UserType === "Director"){
+      navigate('/Director_Home')
+    }else if(auth.token === null){
+      navigate('/')
+    }
+  }, [auth.UserType,navigate])
   return (
     <div>
       <Grid container justifyContent={"center"}>

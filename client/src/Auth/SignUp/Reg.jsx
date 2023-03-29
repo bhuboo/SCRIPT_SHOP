@@ -49,7 +49,7 @@ function Reg() {
     if(auth.UserType === "Writer"){
       navigate('/WriterHome')
     }else if(auth.UserType === "Director"){
-      navigate('/update-pass')
+      navigate('/Director_Home')
     }
   }, [auth.UserType,navigate])
   

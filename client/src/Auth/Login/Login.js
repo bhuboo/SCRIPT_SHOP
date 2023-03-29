@@ -50,7 +50,7 @@ function Login() {
     if(auth.UserType === "Writer"){
       navigate('/WriterHome')
     }else if(auth.UserType === "Director"){
-      navigate('/update-pass')
+      navigate('/Director_Home')
     }
   }, [auth.UserType,navigate])
   
@@ -158,18 +158,18 @@ function Login() {
                   type="text"
                   id=""
                   placeholder="Email"
-                  // onChange={(e) =>
-                  //   setDirector({ ...Director, Email: e.target.value })
-                  // }
+                  onChange={(e) =>
+                    setDirector({ ...Director, Email: e.target.value })
+                  }
                 />
                 <input
                   className="textfield-Writer"
                   type="text"
                   id=""
                   placeholder="Password"
-                  // onChange={(e) =>
-                  //   setDirector({ ...Director, Password: e.target.value })
-                  // }
+                  onChange={(e) =>
+                    setDirector({ ...Director, Password: e.target.value })
+                  }
                 />
                 <input
               className="button-submit-sign"
