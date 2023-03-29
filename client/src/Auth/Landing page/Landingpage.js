@@ -7,8 +7,8 @@ function Landingpage() {
   return (
     <div>
         <Navbar/>
-        <Home_G/>
-        <Footer/>
+        {/* <Home_G/>
+        <Footer/> */}
 
     </div>
   )

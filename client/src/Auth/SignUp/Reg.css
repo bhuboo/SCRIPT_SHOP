@@ -1,15 +1,17 @@
 .Grid-First {
   height: 1024px;
+ 
   background: rgba(182, 201, 206, 0.62);
 }
 .first-div-g {
-  width: 480px;
-  height: auto;
+  width:480px;
+  
 }
 .image-first {
   width: 467px;
   height: 467px;
   margin-top: 207px;
+ /* margin-left: 100px; */
 }
 .heading-first-g {
   font-style: normal;
@@ -17,9 +19,10 @@
   font-size: 30px;
   text-align: start;
   color: #ffffff;
+  /* margin-left: 100px; */
 }
 .para-first-g {
-  width: 40%;
+  width: 90%;
   font-family: Inter;
   font-size: 15px;
   font-weight: 500;
@@ -27,6 +30,7 @@
   letter-spacing: 0em;
   text-align: left;
   color: #fdfdfd;
+  /* margin-left: 100px; */
 }
 .Grid-Second {
   background: #ffffff;
@@ -117,4 +121,149 @@
   text-align: center;
   margin-top: 22px;
   color: #ffffff;
+  border: none;
 }
+
+@media only screen and (max-width: 1024px){
+  .first-div-g{
+    width: 400px;
+  }
+  .image-first{
+    width: 400px;
+    height: 400px;
+  }
+
+}
+  
+
+@media only screen and (max-width: 768px){
+  .Grid-First{
+    height: 800px;
+  }
+  .image-first{
+   margin-top: 100px;
+  }
+  
+  
+
+}
+
+@media only screen and (max-width: 425px){
+   .Grid-First{
+    height: 600px;
+  }
+  .first-div-g{
+    width: 300px;
+  }
+  .image-first{
+   width: 300px;
+   height: 300px;
+  }
+  .image-second{
+    width: 300px;
+    height: 300px;
+
+  }
+ 
+  .para-first-g {
+    font-size: 8px;
+    line-height: 10px;
+  }
+  .div-form{
+    width: 260px;
+   height: 40px;
+  }
+  .textfield-Writer {
+    width: 260px;
+   height: 40px;
+  }
+  .button-submit-sign{
+    width: 260px;
+   height: 40px;
+  }
+
+}
+
+@media only screen and (max-width: 375px){
+  .Grid-First{
+    height: 500px;
+  }
+  .first-div-g{
+    width: 250px;
+  }
+   .image-first{
+    width: 250px;
+    height: 250px;
+  }
+  .image-second{
+    width: 250px;
+    height: 250px;
+  }
+  .para-first-g {
+    font-size: 8px;
+  }
+  .heading-first-g{
+    font-size: 15px;
+  }
+  .div-form{
+    width: 230px;
+  height: 35px;
+  }
+  .textfield-Writer {
+    
+   height: 35px;
+   width:230px ;
+  }
+  .button-submit-sign{
+    width: 230px;
+    height: 35px;
+  }
+}
+
+
+@media only screen and (max-width: 320px){
+  .Grid-First{
+    height: 400px;
+  }
+  .first-div-g{
+    width: 166.57px;
+  }
+  .image-first{
+    width: 166.57px;
+    height: 166.57px;
+   
+  
+ }
+ .image-second{
+
+  width: 240px;
+ 
+ } 
+  
+  .heading-first-g {
+    font-size: 10px;
+
+  }
+ .para-first-g {
+  font-size: 5px;
+  line-height: 6px;
+ 
+
+}
+ .div-form{
+  width: 223px;
+  height: 29px;
+ }
+ .textfield-Writer {
+  width: 223px;
+  height: 29px;
+ }
+ .button-submit-sign{
+  width: 223px;
+  height: 29px;
+ }
+
+}
+
+
+

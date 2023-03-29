@@ -1,3 +1,33 @@
+.publish-form{
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    margin-left: 160px;
+    text-align: left;
+   
+
+}
+.publish-ipbox{
+    width: 340px;
+    height: 45px;
+    border: 1px solid #53C352;
+    border-radius: 10px;
+    padding: 10px 15px;
+
+}
+.publish-button{
+    width: 340px;
+    height: 45px;
+    align-items: center;
+    border-radius: 10px;
+    background: #53C352;
+    border: none;
+    color :white;
+}
+.file-input{
+    display: none;
+
+}
 .publish-div{
     margin-top: 130px;
 }
@@ -5,7 +35,7 @@
     font-size: 26px;
     font-weight: 600;
     margin-top: 0px;
-    margin-left: 100px;
+   
 }
 .second-para{
     font-size: 16px;
@@ -16,6 +46,7 @@
 }
 .publish-img{
     margin-top: 70px;
+
     width: 435px;
     height: 311px;
 }
