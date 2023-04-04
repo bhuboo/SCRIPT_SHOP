@@ -17,8 +17,7 @@ router.post("/",async (req,res)=>{
     if(error) return res.status(400).send(error.details[0].message);
 
     let User = await ScriptWriter.findOne({email: req.body.Email});
-
-    console.log(User);
+    
     if(!User){ 
         return res.status(400).send("INVALID Email ID");
     }

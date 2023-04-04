@@ -1,27 +1,25 @@
 import { Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Footer from "../../../Components/Footer/Footer";
 import Navbar from "../../../Components/Navbar/Navbar";
 import "./Writer_Home.css";
 
 function Writer_Home() {
+  const navigate = useNavigate();
+  const { token, UserType } = useSelector((state) => state.auth);
 
-  const navigate=useNavigate();
-  const {token,UserType} =useSelector((state)=>state.auth)
-
-
-  useEffect(()=>{
-    if(token === null){
-     navigate('/')
-    }else if(UserType === 'Director'){
-      navigate('/Director_Home')
+  useEffect(() => {
+    if (token === null) {
+      navigate("/");
+    } else if (UserType === "Director") {
+      navigate("/Director_Home");
     }
-   },[token])
+  }, [token]);
   return (
     <>
-      <Navbar Writer />
+    <Navbar/>
       <Grid container justifyContent={"center"}>
         <Grid
           item
@@ -52,13 +50,19 @@ function Writer_Home() {
             <h3 className="second-G-head-HW">Your Dashboard</h3>
           </div>
           <div className="second-HW-div2">
-            <button className="div2-1child">Publish Script</button>
-            <button className="div2-2child">My Scripts</button>
-            <button className="div2-3child">Analytics</button>
+            <Link to={"/publish"}>
+              <button className="div2-1child">Publish Script</button>
+            </Link>
+            <Link to={"/my-script"}>
+              <button className="div2-2child">My Scripts</button>
+            </Link>
+            <Link to={"/analytics"}>
+              <button className="div2-3child">Analytics</button>
+            </Link>
           </div>
         </Grid>
       </Grid>
-      <Footer />
+      <Footer/>
     </>
   );
 }

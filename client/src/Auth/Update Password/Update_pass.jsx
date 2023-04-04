@@ -2,10 +2,13 @@ import { Grid } from '@mui/material'
 import React from 'react'
 import './Update_pass.css'
 import uppwd from '../../Assets/updatepwd/updpwd.png'
+import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
 
 function Update_pass() {
   return (
-    <div>
+    <>
+    <Navbar/>
       <Grid container>
          <Grid item md={5}>
            <div className='pwdframe'>
@@ -22,7 +25,8 @@ function Update_pass() {
               </div>
         </Grid>
       </Grid>
-    </div>
+      <Footer/>
+    </>
   )
 }
 

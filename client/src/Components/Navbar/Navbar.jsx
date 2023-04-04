@@ -56,7 +56,7 @@ const Navbar = () => {
         <Grid item md={6}>
           <nav className="NAV-a">
             <a href="#" style={{ color: "#53C352" }}>
-              Home{screenWidth}
+              Home
             </a>
             <a href="#">Features</a>
             <a href="#">Contact Us</a>
@@ -102,6 +102,62 @@ const Navbar = () => {
                     />
                     <span>Profile</span>
                   </li>
+                 <Link to={'/update-pass'} style={{textDecoration:'none'}}>
+                  <li>
+                    <img src={Updatepassword} alt="alr" />
+                    <span>Update Password</span>
+                  </li>
+                 </Link>
+                  <li>
+                    <img src={customersupport} alt="alr" />
+                    <span>Customer Support</span>
+                  </li>
+                  <li>
+                    <img src={customersupport} alt="alr" />
+                    <span>Privacy & Policy</span>
+                  </li>
+                  <li onClick={handleLogout}>
+                    <LogoutIcon
+                      sx={{
+                        color: "#53C352",
+                        width:'15.83px',
+                        height:'18.33px'
+                      }}
+                      />
+                    <span>Logout</span>
+                  </li>
+                </ul>
+              </div>
+              }
+            </>
+          )}
+          {UserType === "Director" && <>
+              <div className="Profile-Writer-head">
+                <div onClick={()=>setdisplay(!display)} className="Profile-Writer">
+                  <img src={imgprof} alt="img" className="Profile-Writer-img" />
+                  <img
+                    src={display? Arrowup : Arrowdown}
+                    alt="img"
+                    className="Profile-Writer-Arrow"
+                  />
+                </div>
+              </div>
+              {
+                display &&
+              <div className="dropdown-list-W">
+                <ul>
+                  <li>
+                    <AccountCircleIcon
+                      sx={{
+                        color: "#ffffff",
+                        background: "#53C352",
+                        borderRadius: "50%",
+                        width:'15.83px',
+                        height:'18.33px'
+                      }}
+                    />
+                    <span>Profile</span>
+                  </li>
                   <li>
                     <img src={Updatepassword} alt="alr" />
                     <span>Update Password</span>
@@ -128,8 +184,7 @@ const Navbar = () => {
               </div>
               }
             </>
-          )}
-          {UserType === "Director" && <button>Director</button>}
+            }
         </Grid>
       </Grid>
 }

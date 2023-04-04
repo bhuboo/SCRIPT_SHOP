@@ -23,12 +23,12 @@ app.use(cors())
 
 // Script Writer apis
 app.use("/api/Sregister",scriptregister);
-app.use("/api/Slogin",scriptlogin)
+app.use("/api/Slogin",scriptlogin);
 
 // Director APIs
 app.use("/api/Dregister",directregister);
 app.use("/api/Dlogin",directorlogin);
-app.use("/api/Dscript",Scriptlist)
+app.use("/api/Dscript",Scriptlist);
 
 // ADMIN APIS
 app.use("/api/Alogin",adminlogin);

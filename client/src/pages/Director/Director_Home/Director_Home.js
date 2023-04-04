@@ -1,9 +1,11 @@
+import './Director_Home.css';
 import React, { useEffect } from 'react'
 import products from './product.json'
 import {Card, Grid} from '@mui/material'
-import './Director_Home.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
+
 function Director_Home() {
 
   const navigate=useNavigate();
@@ -20,7 +22,7 @@ function Director_Home() {
     }
   }, [auth.UserType,navigate])
   return (
-    <div>
+    <>
       <Grid container justifyContent={"center"}>
          <Grid
           item
@@ -60,7 +62,7 @@ function Director_Home() {
       )  )}
         </Grid>
         </Grid>
-    </div>
+    </>
   )
 }
 

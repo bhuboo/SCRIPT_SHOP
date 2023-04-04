@@ -2,9 +2,12 @@ import React from 'react'
 import products from './product.json'
 import './my_script.css'
 import {Card,  Grid} from '@mui/material'
+import Navbar from '../../../Components/Navbar/Navbar'
+import Footer from '../../../Components/Footer/Footer'
 function my_script() {
   return (
     <>
+    <Navbar/>
         <p className='hdscript'>Your Scripts</p>
       <Grid container>
         <Grid 
@@ -21,6 +24,7 @@ function my_script() {
       )  )}
         </Grid>
         </Grid>
+        <Footer/>
     </>
   )
 }
