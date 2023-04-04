@@ -1,0 +1,320 @@
+.frame-1 {
+  background: rgba(83, 195, 82, 0.62);
+  height: 1024px;
+}
+.frame1-div {
+  width: 553px;
+  height: auto;
+}
+.loginimg1 {
+  width: 553px;
+  height: 288px;
+  margin-top: 339px;
+}
+.LgHd {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  color: #ffffff;
+  margin-top: 75px !important;
+}
+.Lgpara {
+  margin-top: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fdfdfd;
+  width: 80%;
+}
+/* logo images style */
+.logo1img {
+  position: absolute;
+  left: 8.22%;
+  top: 22.41%;
+  transform: rotate(-11.42deg);
+  width: 44.43px;
+  height: 43.11px;
+}
+.logo2img {
+  position: absolute;
+  left: 45.27%;
+  top: 5.27%;
+  transform: rotate(2.66deg);
+  width: 99.61px;
+  height: 99.83px;
+}
+.logo3img {
+  position: absolute;
+  right: 4.39%;
+  top: 33.15%;
+  transform: rotate(-11.42deg);
+  width: 52.77px;
+  height: 51.2px;
+}
+.logo4img {
+  position: absolute;
+  left: 14.22%;
+  top: 81.03%;
+  bottom: 11.83%;
+  transform: rotate(330deg);
+  width: 73px;
+  height: 73px;
+}
+.logo5img {
+  position: absolute;
+  right: 28.33%;
+  bottom: 16.67%;
+  transform: rotate(330deg);
+  width: 65.83px;
+  height: 52.67px;
+}
+/* 2nd grid */
+.frame-2 {
+  position: relative;
+}
+.frame2-div {
+  width: 340px;
+  height: auto;
+  margin-top: 398px;
+}
+.LgHd1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+}
+.div-form {
+  width: 340px;
+  height: 45px;
+  background: #ffffff;
+  border: 1px solid #53c352;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 17px;
+  padding-right: 15px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.div-form1 {
+  width: 340px;
+  height: 105px;
+  background: #ffffff;
+  border: 1px solid #53c352;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 15px;
+  padding-top: 20px;
+  transition: all 0.5s;
+}
+.div-span-form {
+  display: none;
+}
+.div-span-form1 {
+  width: 44px;
+  height: 18px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 30px;
+  color: #959595;
+  cursor: pointer;
+}
+.div-span-value {
+  width: 44px;
+  height: 18px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #959595;
+}
+.forgotpwd {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #959595;
+  margin-top: 13px;
+}
+.forgotpwd1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #959595;
+  margin-top: 15px;
+}
+.signuplink {
+  text-decoration: none;
+  color: #53c352;
+}
+
+/* media query */
+
+@media (max-width: 1440px){
+  .frame1 {
+    width: 253px;
+    height: auto;
+  }
+  .loginimg1 {
+    width: 403px;
+    height: 200px;
+    margin-top: 300px;
+  }
+  .LgHd {
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 70px !important;
+  }
+  .Lgpara {
+    margin-top: 17px;
+    font-weight: 500;
+    font-size: 16px;
+    width: 70%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .loginimg1 {
+    margin-left: 60px;
+    margin-top: 270px;
+  }
+  .frame-1 {
+    height:824px;
+  }
+  .LgHd {
+    margin-left: 70px;
+  }
+  .Lgpara {
+    margin-left: 70px;
+  }
+  .frame2-div {
+    margin-top: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .frame1-div {
+    width: 100%;
+  }
+  .loginimg1 {
+    width: 70%;
+    height: 260px;
+    margin-left: 100px;
+  }
+  .LgHd {
+    margin-top: 40px !important;
+    margin-left: 100px;
+  }
+  .Lgpara {
+    font-size: 16px;
+    margin-left:  100px;
+    width: 70%;
+    text-align:start;
+  }
+  .LgHd1 {
+    margin-left: 100px;
+  }
+  .textfield-Writer{
+    margin-left: 100px;
+  }
+  .div-form {
+margin-left: 100px;
+  }
+  .button-submit-sign{
+    margin-left: 100px;
+  }
+  .forgotpwd {
+    margin-left: 100px;
+  }
+  .forgotpwd1 {
+    margin-left: 100px;
+  }
+  .logo1img {
+    left: 8.22%;
+    top: 22.41%;
+    width: 44.43px;
+    height: 43.11px;
+  }
+  .logo2img {
+    left: 75.27%;
+    top: 5.27%;
+    transform: rotate(2.66deg);
+    width: 89.61px;
+    height: 89.83px;
+  }
+  .logo3img {
+    left: 170.39%;
+    top: 33.15%;
+  }
+  .logo4img {
+    top: 111.03%;
+  }
+  .logo5img {
+    left: 148.33%;
+    top: 106.67%;
+    transform: rotate(0deg);
+    width: 65.83px;
+    height: 52.67px;
+  }
+}
+@media (max-width: 425px) {
+  .LgHd {
+    margin-right: 50px;
+    font-size: 18px;
+  }
+  .Lgpara {
+    margin-left: 97px;
+    font-size: 12px;
+  }
+  .forgotpwd {
+    margin-right: 143px;
+  }
+  .frame-1{
+    width: 100%;
+  }
+  .frame1-div {
+    height: auto;
+    width: 100%;
+  }
+  .frame-2 {
+    height: auto;
+  }
+  .logo3img {
+    left: 70.39%;
+    top: 33.15%;
+  }
+  .logo5img {
+    left: 100.33%;
+    top: 106.67%;
+    transform: rotate(0deg);
+    width: 65.83px;
+    height: 52.67px;
+  }
+  .div-form-1 {
+    width: 240px;
+    height: 25px;
+    background: #ffffff;
+    border: 1px solid #53c352;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7px;
+    padding-right: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+ 
+}

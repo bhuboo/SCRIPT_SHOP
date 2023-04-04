@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Reg.css";
 import { Grid } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {registerUser,registerDirector} from "../../Redux/Slices/AuthSlice"
 import image from "../../Assets/Signup/signup(1).png";
 import image1 from "../../Assets/Signup/signup.png";
+import { useNavigate } from "react-router-dom";
 
 function Reg() {
   const dispatch = useDispatch();
+  const navigate=useNavigate();
+
+  const auth = useSelector((state)=>state.auth)
 
   const [display, setDisplay] = useState(false);
   const [value, setvalue] = useState("Writer");
@@ -41,6 +45,13 @@ function Reg() {
     }
   }
 
+  useEffect(() => {
+    if(auth.UserType === "Writer"){
+      navigate('/WriterHome')
+    }else if(auth.UserType === "Director"){
+      navigate('/Director_Home')
+    }
+  }, [auth.UserType,navigate])
   
   return (
     <>
@@ -48,8 +59,9 @@ function Reg() {
         <Grid
           className="Grid-First"
           item
+        
           md="6"
-   
+          
           xs="12"
           justifyContent={"center"}
           
@@ -70,14 +82,16 @@ function Reg() {
         <Grid
           className="Grid-Second"
           item
+          
           md="6"
-         
+        
           xs="12"
+          
 
         
           
           justifyItems={"center"}
-          alignContent={"start"}
+          alignContent={"center"}
           display={"grid"}
         >
           <img className="image-second" src={image1} alt="" />
@@ -147,7 +161,7 @@ function Reg() {
                   className="textfield-Writer"
                   type="text"
                   id=""
-                  placeholder="Confirm PasswordX"
+                  placeholder="Confirm Password"
                   onChange={(e) =>
                     setWriter({ ...Writer, ConfirmPassword: e.target.value })
                   }
@@ -187,7 +201,7 @@ function Reg() {
                   className="textfield-Writer"
                   type="text"
                   id=""
-                  placeholder="Confirm PasswordX"
+                  placeholder="Confirm Password"
                   onChange={(e) =>
                     setDirector({
                       ...Director,

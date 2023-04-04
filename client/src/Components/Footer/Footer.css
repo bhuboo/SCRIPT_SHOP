@@ -22,7 +22,7 @@
 
 .main-footer{
     background-color:  #666363;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 .grid-div p{
     color: #FFFFFF;
@@ -30,7 +30,7 @@
 }
 .Footer-Gpara{
     margin-top: 30px;
-    
+   
     font-size: 13px;
     font-weight: 500;
     text-align: center;
@@ -40,7 +40,9 @@
     margin-top: 30px;
     font-size: 13px;
     font-weight: 500;
-    
+    width: 300px;
     margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
 
 }

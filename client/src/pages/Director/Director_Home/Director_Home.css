@@ -1,0 +1,137 @@
+.first-G-WH {
+    width: 96%;
+    height: 246px;
+    background: #53c352;
+  }
+  .first-G-para-WH {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: start;
+    color: #ffffff;
+    width: 60%;
+  }
+.director_Hd{
+margin-top: 40px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 27px
+}
+.main_card{
+    display: flex;
+    height:700px;
+    flex-wrap: wrap;
+}
+.dir_card{
+    margin-left: 40px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 300px;
+    background: #FEFEFF;
+    border: 1px solid #53C352;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    box-shadow: #000000
+    25%;
+}
+.home_name{
+    text-align: center;
+    margin-top: 120px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.alex_btn{
+padding: 4px 10px;
+color: #ffff;
+font-weight: 400;
+border: none;
+width: 69px;
+height: 34px;
+margin-left: 14px;
+margin-top: 100px;
+background: #53C352;
+border-radius: 5px;
+}
+
+.purchase{
+    padding: 10px 10px;
+    color: #ffff;
+    font-weight: 400;
+    border: none;
+    width: 79px;
+    height: 34px;
+    margin-left: 120px;
+    margin-top: 100px;
+    background: #53C352;
+    border-radius: 5px;
+}
+@media (max-width: 1440px) {
+    .director_Hd{
+       margin-left: 0px;
+       font-size: 21px
+    }
+    .dir_card{
+        width: 340px;
+        height: 310px;
+    }
+    .purchase{
+        margin-left: 160px;
+        margin-top: 110px;
+    }
+}
+@media (max-width: 1024px) {
+    .director_Hd{
+       margin-left: 60px;
+       font-size: 21px
+    }
+    .dir_card{
+        width: 300px;
+        height: 300px;
+        margin-left: 10px;
+    }
+    .purchase{
+        margin-left:120px;
+        margin-top: 100px;
+    }
+}
+@media (max-width: 768px) {
+    .director_Hd{
+        margin-left: 100px;
+        font-size: 20px
+     }
+     .dir_card{
+        width: 290px;
+        height: 290px;
+    }
+    .purchase{
+        margin-left: 112px;
+    }
+}
+@media (max-width: 425px) {
+    .director_Hd{
+        margin-left: 90px;
+        font-size: 17px
+     }
+     .dir_card{
+        width: 290px;
+        height: 290px;
+    }
+    .purchase{
+        margin-left:90px;
+    }
+}
+@media (max-width: 375px) {
+    .director_Hd{
+        align-items: center;
+     }
+}
+
+@media (max-width: 320px) {
+    .director_Hd{
+        align-items: center;
+        margin-left: 40px;
+    }
+}
