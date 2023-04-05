@@ -1,15 +1,17 @@
 .Grid-First {
   height: 1024px;
+ 
   background: rgba(182, 201, 206, 0.62);
 }
 .first-div-g {
-  width: 480px;
-  height: auto;
+  width:480px;
+  
 }
 .image-first {
   width: 467px;
   height: 467px;
   margin-top: 207px;
+ /* margin-left: 100px; */
 }
 .heading-first-g {
   font-style: normal;
@@ -17,9 +19,17 @@
   font-size: 30px;
   text-align: start;
   color: #ffffff;
+  /* margin-left: 100px; */
+ 
+}
+.heading-second-g{
+  font-size: 26px;
+ 
+  
+
 }
 .para-first-g {
-  width: 40%;
+  width: 90%;
   font-family: Inter;
   font-size: 15px;
   font-weight: 500;
@@ -27,6 +37,7 @@
   letter-spacing: 0em;
   text-align: left;
   color: #fdfdfd;
+  /* margin-left: 100px; */
 }
 .Grid-Second {
   background: #ffffff;
@@ -37,9 +48,13 @@
   margin-top: 24px;
 }
 .form-style {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   margin-top: 25px;
+  width: 300px;
+
+
+ 
 }
 .div-form {
   width: 340px;
@@ -47,13 +62,15 @@
   background: #ffffff;
   border: 1px solid #53c352;
   border-radius: 10px;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
-  padding-left: 17px;
+  /* padding-left: 17px; */
   padding-right: 15px;
   cursor: pointer;
   transition: all 0.5s;
+  margin-left: auto;
+  margin-right: auto;
 }
 .div-form1 {
   width: 340px;
@@ -61,9 +78,9 @@
   background: #ffffff;
   border: 1px solid #53c352;
   border-radius: 10px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
-  padding-left: 30px;
+  /* padding-left: 30px; */
   padding-right: 15px;
   padding-top: 20px;
   transition: all 0.5s;
@@ -106,9 +123,11 @@
   border-radius: 10px;
   border: 1px solid #53c352;
   margin-top: 15px;
-  padding-left: 17px;
+  /* padding-left: 17px; */
   padding-right: 15px;
   outline: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 .button-submit-sign {
   width: 340px;
@@ -119,33 +138,202 @@
   margin-top: 22px;
   color: #ffffff;
   border: none;
+  margin-left: auto;
+  margin-right: auto;
 }
-/* 1. Bloody Mary (Seed Up)
-2. Dandelions
-3. If You Were A Woman x kings & Queens
-4. Made You Look
-5. l'm Good
-6. You and Me
-7. Middle Of The Night
-8. Here With Me
-9.Calm Down
-10. I'm Yours sSped Up ( Lyrics ) 
-11. Shameless x Middle Of The Niget
-12. Snap
-13. MARY ON A
-CROSS-GHOST
-14. People You Know | Nightcore  ( Lyrics )
-15. Worth Nothing
-16. Dernière Danse
-17. Whenever Whenever  (With A Cappella Part TikTok)
-18. Antidepresan
-19. Bones
-20. Love
-21. Carol of the Bells
-22. Ainsi basla vida (slowe + Reverb)
-23. Space Song
-24. Until I Found You
-25. Plain Jane (Remix)
-26. Dom Dom Yes Yes
-27. N'y pens plus
-28. Mockingbird */
+
+@media only screen and (max-width: 1024px){
+  .first-div-g{
+    width: 400px;
+  }
+  .image-first{
+    width: 400px;
+    height: 400px;
+  }
+  .div-form {
+    justify-self: center;
+    width: 300px;
+  }
+  .div-form1{
+    width: 300px;
+  }
+  .textfield-Writer{
+    width: 300px;
+  }
+  .button-submit-sign{
+    width: 300px;
+
+  }
+ 
+ 
+}
+
+
+  
+
+@media only screen and (max-width: 768px){
+  .Grid-First{
+    height: 800px;
+  }
+  .image-first{
+   margin-top: 100px;
+  }
+  .div-form1{
+    width: 300px;
+    
+  }
+ 
+
+
+ 
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 425px){
+   .Grid-First{
+    height: 600px;
+  }
+  .first-div-g{
+    width: 300px;
+  }
+  .image-first{
+   width: 300px;
+   height: 300px;
+  }
+  .image-second{
+    width: 300px;
+    height: 300px;
+
+  }
+ 
+  .para-first-g {
+    font-size: 8px;
+    line-height: 10px;
+  }
+  .div-form{
+    width: 300px;
+   height: 40px;
+ 
+ 
+  }
+  .textfield-Writer {
+    width: 300px;
+   height: 40px;
+  }
+  .button-submit-sign{
+    width: 290px;
+   height: 40px;
+  }
+
+
+
+  
+
+
+   
+
+}
+
+
+
+@media only screen and (max-width: 375px){
+  .Grid-First{
+    height: 500px;
+  }
+  .first-div-g{
+    width: 250px;
+  }
+   .image-first{
+    width: 250px;
+    height: 250px;
+  }
+  .image-second{
+    width: 250px;
+    height: 250px;
+  }
+  .para-first-g {
+    font-size: 8px;
+  }
+  .heading-first-g{
+    font-size: 15px;
+  }
+  .div-form{
+    width: 300px;
+  height: 35px;
+
+  }
+  .textfield-Writer {
+    justify-self: flex-start;
+   height: 35px;
+   width:300px ;
+  }
+  .button-submit-sign{
+    width: 300px;
+    height: 35px;
+  }
+  
+
+  
+}
+
+
+@media only screen and (max-width: 320px){
+  .Grid-First{
+    height: 400px;
+  }
+  .first-div-g{
+    width: 166.57px;
+  }
+  .image-first{
+    width: 166.57px;
+    height: 166.57px;
+   
+  
+ }
+ .image-second{
+
+  width: 240px;
+ 
+ } 
+  
+  .heading-first-g {
+    font-size: 10px;
+
+  }
+ .para-first-g {
+  font-size: 5px;
+  line-height: 6px;
+ 
+ 
+
+}
+.form-style {
+
+  width: 240px;
+
+
+ 
+}
+ .div-form{
+  width: 240px;
+  height: 32px;
+ }
+ .textfield-Writer {
+  width: 240px;
+  height: 32px;
+ }
+ .button-submit-sign{
+  width: 240px;
+  height: 30px;
+ }
+
+}
+
+
+

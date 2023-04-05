@@ -30,7 +30,7 @@ const Publish = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Grid container md={10} justifyContent={"center"}>
         <Grid item md={3}>
           <div className="publish-div">

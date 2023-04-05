@@ -92,3 +92,87 @@
   font-size: 12px;
   color: #7c7c7c;
 }
+
+.mobile-view{
+    top: 10%;
+    
+    background-color:#ffffff;
+    height: 100%;
+    width: 100%;
+   
+  }
+
+
+.mobile-Nav li{
+     font-weight: 600;
+     font-size: 16px;
+     line-height: 40px;
+     list-style: none;
+     
+
+}
+.M-Home{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 40px;
+    list-style: none;
+    color:  #53C352;;
+    text-align: center;
+
+}
+.M-feature{
+   /* margin-left: -12px; */
+   text-align: center;
+   font-weight: 600;
+   font-size: 16px;
+   line-height: 40px;
+   list-style: none;
+} 
+.M-Contact{
+    /* margin-left: -18px; */
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 40px;
+    list-style: none;
+
+}  
+.M-Button {
+    
+    width: 186px;
+   height: 44px;
+   background: #53C352;
+   border-radius: 10px;
+   /* margin-left: -65px; */
+  
+   border: none;
+   color: white;
+    margin-bottom: 20px;
+}
+.nav-div-btn{
+  color: #53C352;
+
+ 
+
+}
+.nav-head-btn{
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 1024px){
+    
+    .NAV-a{
+        margin-left: 80px;
+    }
+    .NAv-btn {
+        width: 60px;
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+  .nav-div-btn{
+    margin-left: 10px;
+  }
+}

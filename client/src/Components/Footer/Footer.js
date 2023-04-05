@@ -7,7 +7,11 @@ const Footer = () => {
   return (
     <div className='main-footer'>
       <Grid container >
-        <Grid item md={3} >
+        <Grid item
+         md={3}
+         sm={6}
+         xs={12}
+          >
           <div className='grid-div'>
            <p className='Footer-Gpara' >Script shop</p>
             <p className='Footer-Gpara1'  >
@@ -17,7 +21,11 @@ const Footer = () => {
             </div>
 
         </Grid>
-        <Grid item md={3}>
+        <Grid item
+         md={3}
+         sm={6}
+         xs={12}
+         >
         <div className='grid-div'>
            <p className='Footer-Gpara' >Script shop</p>
             <p className='Footer-Gpara1' >
@@ -28,7 +36,11 @@ const Footer = () => {
         
           
         </Grid>
-        <Grid item md={3}>
+        <Grid item 
+        md={3}
+        sm={6}
+         xs={12}
+        >
         <div className='grid-div'>
            <p className='Footer-Gpara'>Script shop</p>
             <p className='Footer-Gpara1'  >
@@ -39,7 +51,12 @@ const Footer = () => {
        
           
         </Grid>
-        <Grid item md={3}>
+        <Grid item
+         md={3}
+         sm={6}
+         xs={12}
+
+         >
         <div className='grid-div'>
            <p className='Footer-Gpara'>Script shop</p>
             

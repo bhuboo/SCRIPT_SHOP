@@ -1,40 +1,11 @@
-.publish-div {
-  margin-top: 200px;
+.publish-div{
+    margin-top: 130px;
 }
-.Publish-heading {
-  font-size: 26px;
-  font-weight: 600;
-  margin-top: 0px;
-}
-.Publish-form {
-  display: flex;
-  flex-direction: column;
-  width: 340px;
-  height: auto;
-}
-.Publish-Writer {
-  width: 340px;
-  height: 45px;
-  background: #ffffff;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  color: #959595;
-  border-radius: 10px;
-  border: 1px solid #53c352;
-  margin-top: 15px;
-  padding-left: 17px;
-  padding-right: 15px;
-  outline: none;
-}
-.fileLabel{
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    padding-left: 34%;
-    padding-right: 34%;
-    margin-left: 0;
+.Publish-heading{
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-left: 100px;
 }
 .second-para {
   font-size: 16px;
@@ -43,10 +14,10 @@
   margin-left: 180px;
   margin-top: 80px;
 }
-.publish-img {
-  margin-top: 70px;
-  width: 435px;
-  height: 311px;
+.publish-img{
+    margin-top: 70px;
+    width: 435px;
+    height: 311px;
 }
 .button-submit-Writer{
     width: 340px;

@@ -1,71 +1,86 @@
 import React from 'react'
 import './Home_G.css'
-// import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+
+
 import Landingimg from '../../Assets/Landing-img/landimg.png'
 import Grid from '@mui/material/Grid';
+import Products from './Product.json'
+import { Card } from '@mui/material';
 
 const Home_G = () => {
   return (
-    <div>
+    <>
+
+    <div className='home-land-main'>
       <Grid container>
-        <Grid item md={6}>
-           <div>
-            <p className='LA-para1'>Lorem ipsum dolor sit amet consectetur. Nisl ut lectus volutpat a urnac at egestas egestas. Arcu quis est sit aliquam egestas purus pharetra risus consectetur. Enim in leo scelerisque feugiat nisl nis aenean. Enim egestas inunc tristique integer interdum.</p>
-            <button className='Home_Gpara'>Publish Your First script</button>
-            </div>
-        
+        <Grid
+          className="land-home-grid"
+          item
+          md="7"
+   
+          xs="12"
+          justifyContent={"center"}
+          
+          display={"grid"}>
+
+           <div className='home-div-first'> 
+            <p className='home-div-para' >Lorem ipsum dolor sit amet consectetur. Nisl ut lectus volutpat a urnac at egestas egestas. Arcu quis est sit aliquam egestas purus pharetra risus consectetur. Enim in leo scelerisque feugiat nisl nis aenean. Enim egestas inunc tristique integer interdum.</p>
+             <button className='land-first-homebtn'>Publish Your First Script</button>
+           </div>
+
         </Grid>
-        <Grid item md={6}>
-        <div>
-              <img className='LAnd-img' src={Landingimg} alt="l-img" />
-            </div>
-        
+        <Grid
+         
+          item
+          md="5"
+   
+          xs="12"
+         
+          
+          display={"grid"}>
+
+              <div className='home-div-second'> 
+                <img className='LAnd-img' src={Landingimg} alt="l-img" />
+
+              </div>
+
         </Grid>
+
+    
+
+      
         
-      </Grid>
+     
 
       <h3 className='HomeG-h3'>Benifits</h3>  
-      <Grid container>
-        <Grid item md={4}>
-        <div className='Card-G'  >
-            <CardContent>
-                <p className='Homeg-cardp'>Lorem ipsum dolor sit amet consectetur. Nisl ut lectus volutpat a urna at egestas egestas. Arcu quis est sit aliquam egestas purus pharetra risus consectetur. Enim in leo scelerisque feugiat nisl nisi aenean. Enim egestas nunc tristique integer interdum.</p>
-
-            </CardContent>
-
-            </div>
-
-
-        </Grid>
-        <Grid item md={4}>
-        <div className='Card-G1' >
-            <CardContent>
-                <p className='Homeg-cardp'>Lorem ipsum dolor sit amet consectetur. Nisl ut lectus volutpat a urna at egestas egestas. Arcu quis est sit aliquam egestas purus pharetra risus consectetur. Enim in leo scelerisque feugiat nisl nisi aenean. Enim egestas nunc tristique integer interdum.</p>
-
-            </CardContent>
-            </div>
-          
-        </Grid>
-        <Grid item md={4}>
         
-            <div className='Card-G2' >
-            <CardContent>
-                <p className='Homeg-cardp'>Lorem ipsum dolor sit amet consectetur. Nisl ut lectus volutpat a urna at egestas egestas. Arcu quis est sit aliquam egestas purus pharetra risus consectetur. Enim in leo scelerisque feugiat nisl nisi aenean. Enim egestas nunc tristique integer interdum.</p>
+         <Grid item
+          className="map-grid-main"
+           md="12"
+          justifyContent={"center"}
+          >
 
-            </CardContent>
+          {Products.map((product)=>(
+            <Card className='div-map-card'>
+             <div className='para-map-div'>
+              <p className='map-para'>{product.para1}</p>
+              </div>
 
-            </div>
-          
-        </Grid>
+            </Card>
+          ))}
 
-      </Grid>
+         </Grid>
 
+
+      
+    
+
+          </Grid>
        
-        
-
-
     </div>
+
+
+    </>
   )
 }
 

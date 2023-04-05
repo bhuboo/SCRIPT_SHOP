@@ -2,6 +2,7 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
+import  Hamburger  from 'hamburger-react'
 import Grid from "@mui/material/Grid";
 
 // logo
@@ -38,12 +39,14 @@ const Navbar = () => {
 
 
   const [display,setdisplay]=useState(false)
-  const [open,setopen]=useState(false)
-  console.log(open);
+  const [click,setclick]=useState(false)
+  console.log(click);
 
   const handleLogout = () =>{
     dispatch(logOutUser())
     }
+
+    const [isOpen,setOpen] = useState(false)
 
   return (
     <>
@@ -190,13 +193,19 @@ const Navbar = () => {
 }
 {
   screenWidth < 769 &&
-  <Grid container justifyContent={'flex-end'}>
-    <img onClick={()=>setopen(!open)} src={Arrowdown} alt="hamburger"  />
+  <Grid container justifyContent={'flex-end'} >
+    <div className="nav-div-btn" onClick={()=>setclick(!click)} ><Hamburger  toggled={isOpen} toggle={setOpen} /></div>
+    
     {
-    open &&
-      <div style={{position:'absolute',top:'10%',left:'10%'}}>
-      <ul>
-        <li>home</li>
+     click &&
+      <div style={{position:'absolute'}} className='mobile-view' >
+      <ul className="mobie-nav">
+        <li className="M-Home">Home</li>
+        <li className="M-feature">Features</li>
+        <li className="M-Contact">Contact Us</li>
+        <li><p className="nav-head-btn"><button style={{marginTop:'40px'}}  className="M-Button">Login</button></p></li>
+        <li><p className="nav-head-btn"><button className="M-Button">Sign Up</button></p></li>
+
       </ul>
     </div>
     }

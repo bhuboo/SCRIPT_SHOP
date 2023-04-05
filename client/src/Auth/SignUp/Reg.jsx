@@ -61,9 +61,12 @@ function Reg() {
         <Grid
           className="Grid-First"
           item
+        
           md="6"
-          justifyItems={"center"}
-          alignContent={"start"}
+          
+          xs="12"
+          justifyContent={"center"}
+          
           display={"grid"}
         >
           <div className="first-div-g">
@@ -81,9 +84,16 @@ function Reg() {
         <Grid
           className="Grid-Second"
           item
+          
           md="6"
+        
+          xs="12"
+          
+
+        
+          
           justifyItems={"center"}
-          alignContent={"start"}
+          alignContent={"center"}
           display={"grid"}
         >
           <img className="image-second" src={image1} alt="" />
