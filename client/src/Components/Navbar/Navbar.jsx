@@ -2,10 +2,10 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
-import  Hamburger  from 'hamburger-react'
+import Hamburger from 'hamburger-react';
 import Grid from "@mui/material/Grid";
 
-// logo
+// logo import LogoutIcon from "@mui/icons-material/Logout";
 import imgprof from "../../Assets/Writer-home/prof.png";
 import Arrowdown from "../../Assets/Writer-home/Arrowdown.png";
 import Arrowup from "../../Assets/Writer-home/Arrowup.png";
@@ -13,7 +13,7 @@ import Updatepassword from "../../Assets/Writer-home/updatepassword.png";
 import customersupport from "../../Assets/Writer-home/customersupport.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { logOutUser } from "../../Redux/Slices/AuthSlice";
+import {logOutUser } from "../../Redux/Slices/AuthSlice";
 
 const Navbar = () => {
   const { token, UserType } = useSelector((state) => state.auth);
@@ -139,7 +139,7 @@ const Navbar = () => {
 {
   screenWidth < 769 &&
   <Grid container justifyContent={'flex-end'} >
-    <div className="nav-div-btn" onClick={()=>setclick(!click)} ><Hamburger  toggled={isOpen} toggle={setOpen} /></div>
+    <div className="nav-div-btn" onClick={()=>setclick(!click)} ><Hamburger toggled={isOpen} toggle={setOpen} /></div>
     
     {
      click &&

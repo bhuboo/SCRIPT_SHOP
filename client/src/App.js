@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 
 
 import Director_Home from "./pages/Director/Director_Home/Director_Home";
+import Profile from "./pages/Writer/Profile/Profile";
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/publish" element={<Publish />} />
         <Route path="/update-pass" element={<Update_pass />} />
         <Route path="/my-script" element={<My_script />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </div>
   );

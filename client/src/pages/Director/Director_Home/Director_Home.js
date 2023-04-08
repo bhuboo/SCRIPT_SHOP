@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 function Director_Home() {
 
   const navigate=useNavigate();
-
   const auth = useSelector((state)=>state.auth)
 
   useEffect(() => {
@@ -42,7 +41,8 @@ function Director_Home() {
           </p>
         </Grid>
         <Grid item
-         md={"8.8"}>
+         md={"10.1"}
+         >
         <p className='director_Hd'>Choose Your Dream Script</p>
         </Grid>
         <Grid 
