@@ -27,7 +27,7 @@ function App() {
       navigate("/Director_Home");
     }
     else if (UserType === "Script") {
-      navigate("/Director_Home");
+      navigate("/WriterHome");
     }
   }, [token]);
   

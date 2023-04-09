@@ -21,7 +21,7 @@ font-size: 27px
 }
 .main_card{
     display: flex;
-    height:700px;
+    height:auto;
     flex-wrap: wrap;
 }
 .dir_card{

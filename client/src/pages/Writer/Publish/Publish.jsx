@@ -1,41 +1,73 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import "./Publish.css";
+import "./loader.css";
 import publish from "../../../Assets/publish/Asset 2@4x 1.png";
 import Navbar from "../../../Components/Navbar/Navbar";
 import Footer from "../../../Components/Footer/Footer";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { ScriptUpload, removeStatus } from "../../../Redux/Slices/ScriptSlice";
+import tik from "../../../Assets/publish/tic.png";
 
 const Publish = () => {
+  const { email } = useSelector((state) => state.auth);
+  const { ScriptStatus, ScriptSucess } = useSelector((state) => state.script);
 
-  const [Script,setScript]=useState({
-    MovieName:"",
-    Synopsis:"",
-    Genre:"",
-    ScriptType:"",
-    ScriptFile:"",
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [name, setname] = useState("");
+  const [Script, setScript] = useState({
+    MovieName: "",
+    Synopsis: "",
+    Genre: "",
+    ScriptType: "",
+    ScriptFile: "",
+    email: email,
   });
 
-  console.log(Script);
-
-  const handlePdfchange = (e) =>{
-    let selectedFile=e.target.files[0];
+  const handlePdfchange = (e) => {
+    let selectedFile = e.target.files[0];
+    setname(selectedFile.name);
 
     let reader = new FileReader();
     reader.readAsDataURL(selectedFile);
-    reader.onloadend = (e) =>{
-      setScript({...Script,ScriptFile:e.target.result});
+    reader.onloadend = (e) => {
+      setScript({ ...Script, ScriptFile: e.target.result });
+    };
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(ScriptUpload(Script));
+  };
+
+  useEffect(() => {
+    if (ScriptStatus === "sucess") {
+      setTimeout(() => {
+        navigate("/my-script");
+        dispatch(removeStatus());
+      }, 5000);
     }
-  }
+  }, [ScriptSucess]);
 
   return (
     <>
-      <Navbar/>
+    {ScriptSucess && (
+    <div className="main-Toast">
+        <div className="sucess-msg">
+          <img className="image-tik" src={tik} alt="some" />
+          <span>{ScriptSucess}</span>
+        </div>
+        </div>
+           )}
+      <Navbar />
       <Grid container md={10} justifyContent={"center"}>
         <Grid item md={3}>
           <div className="publish-div">
             <h3 className="Publish-heading">Publish Your Script</h3>
-            <form className="Publish-form">
+            <form className="Publish-form" onSubmit={handleSubmit}>
               <input
                 className="Publish-Writer"
                 type="text"
@@ -83,12 +115,19 @@ const Publish = () => {
               </label>
               <input
                 style={{ display: "none" }}
-                className="Publish-Writer"
                 type="file"
                 id="file"
                 accept=".pdf,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 onChange={handlePdfchange}
               />
+              {name && (
+                <>
+                  <span className="name-span">Selected File Name</span>
+                  <label className="Publish-Writer-name nameLabel">
+                    {name}
+                  </label>
+                </>
+              )}
               <input
                 className="button-submit-Writer"
                 type="submit"

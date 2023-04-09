@@ -10,6 +10,9 @@ const directorlogin = require('./routes/director/login');
 const adminlogin = require('./routes/admin/login');
 const Scriptpost = require('./routes/scripts/post');
 const Scriptlist = require('./routes/director/scriptlist')
+const ScriptlistWriter = require('./routes/scripts/ScriptlistWriter.js')
+const ScriptlistDirecter = require('./routes/scripts/ScriptlistDirecter.js')
+const WriterUpass = require('./routes/scriptwriter/WriterUpass.js')
 
 
 const port= process.env.PORT || 5000;
@@ -24,11 +27,14 @@ app.use(cors())
 // Script Writer apis
 app.use("/api/Sregister",scriptregister);
 app.use("/api/Slogin",scriptlogin);
+app.use("/api/Wscript",ScriptlistWriter);
+app.use("/api/WUpass",WriterUpass)
 
 // Director APIs
 app.use("/api/Dregister",directregister);
 app.use("/api/Dlogin",directorlogin);
 app.use("/api/Dscript",Scriptlist);
+app.use("/api/Dscript",ScriptlistDirecter);
 
 // ADMIN APIS
 app.use("/api/Alogin",adminlogin);

@@ -24,7 +24,6 @@ router.post("/", async (req, res) => {
     Useremail: req.body.Useremail,
   };
   
-  console.log(req.body);
   const { error } = schema.validate(req.body);
 
   if (error) return res.status(400).send(error.details[0].message);
@@ -37,7 +36,7 @@ router.post("/", async (req, res) => {
 
   User = await User.save();
 
-  return res.status(200).send("Script Upload Sucessfully")
+  return res.status(200).send("Published suceccfully")
 });
 
 module.exports = router;

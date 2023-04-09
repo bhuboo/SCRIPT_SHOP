@@ -4,15 +4,24 @@ import products from './product.json'
 import {Card, Grid} from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../../Components/Navbar/Navbar';
+import Footer from '../../../Components/Footer/Footer';
+import { DirectorScript } from '../../../Redux/Slices/ScriptDirector';
 
 
 function Director_Home() {
 
-  const navigate=useNavigate();
-
+  const {Scriptlist} =useSelector(state=>state.dScript.ScriptList)
   const auth = useSelector((state)=>state.auth)
 
+  const navigate=useNavigate();
+  const dispatch =useDispatch();
+
+
   useEffect(() => {
+
+    dispatch(DirectorScript());
+
     if(auth.UserType === "Writer"){
       navigate('/WriterHome')
     }else if(auth.UserType === "Director"){
@@ -23,6 +32,7 @@ function Director_Home() {
   }, [auth.UserType,navigate])
   return (
     <>
+    <Navbar/>
       <Grid container justifyContent={"center"}>
          <Grid
           item
@@ -53,15 +63,16 @@ function Director_Home() {
         className="main_card" 
         justifyContent={"center"}
         >
-          {products?.map((product,key) =>(
+          {Scriptlist?.map((product,key) =>(
            <Card className='dir_card'>
-          <p className='home_name'>{product.name}</p>
+          <p className='home_name'>{product.Moviename}</p>
           <button className='alex_btn'>By Alex</button>
           <button className='purchase'>Purcharse</button>
         </Card>
       )  )}
         </Grid>
         </Grid>
+        <Footer/>
     </>
   )
 }

@@ -129,7 +129,7 @@ const AuthSlice =createSlice({
                 UserType:"",
                 registerStatus:"",
                 registerError:"",
-                userLoaded:true
+                userLoaded:true,
             }
     },
 },

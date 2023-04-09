@@ -14,6 +14,7 @@ import customersupport from "../../Assets/Writer-home/customersupport.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { logOutUser } from "../../Redux/Slices/AuthSlice";
+import { removeScriptlistWriter } from "../../Redux/Slices/ScriptSlice";
 
 const Navbar = () => {
   const { token, UserType } = useSelector((state) => state.auth);
@@ -44,6 +45,9 @@ const Navbar = () => {
 
   const handleLogout = () =>{
     dispatch(logOutUser())
+    setTimeout(()=>{
+      dispatch(removeScriptlistWriter())
+    },100)
     }
 
     const [isOpen,setOpen] = useState(false)
@@ -58,9 +62,9 @@ const Navbar = () => {
         </Grid>
         <Grid item md={6}>
           <nav className="NAV-a">
-            <a href="#" style={{ color: "#53C352" }}>
+            <Link to={'/WriterHome'} style={{ color: "#53C352" }}>
               Home
-            </a>
+            </Link>
             <a href="#">Features</a>
             <a href="#">Contact Us</a>
           </nav>
