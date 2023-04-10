@@ -3,22 +3,11 @@ import './my_script.css'
 import {Card,  Grid} from '@mui/material'
 import Navbar from '../../../Components/Navbar/Navbar'
 import Footer from '../../../Components/Footer/Footer'
-import { useDispatch, useSelector } from 'react-redux'
-import { UserScript } from '../../../Redux/Slices/ScriptSlice'
+import { useSelector } from 'react-redux'
 function my_script() {
 
-  const {email} =useSelector(state=>state.auth)
-  const [Email,setemail]=useState('');
   const {Scriptlist} =useSelector(state=>state.script.ScriptList)
 
-  console.log(Scriptlist)
-
-  const dispatch =useDispatch();
-
-  useEffect(()=>{
-    setemail(email)
-    dispatch(UserScript(email));
-  },[email,Email])
   return (
     <>
     <Navbar/>

@@ -98,9 +98,9 @@ function Login() {
           <form className="form-style" onSubmit={handleSubmit}>
           <div
               onClick={() => setDisplay(!display)}
-              className={display ? "div-form1" : "div-form"}
+              className={display ? "div-form1-login" : "div-form-login"}
             >
-              <p className={display ? "div-span-form" : "div-span-value"}>
+              <p className={display ? "div-span-form-login" : "div-span-value-login"}>
                 {value}
               </p>
               <span
@@ -108,7 +108,7 @@ function Login() {
                   setvalue("Writer");
                   setDisplay(false);
                 }}
-                className={display ? "div-span-form1" : "div-span-form"}
+                className={display ? "div-span-form1-login" : "div-span-form-login"}
               >
                 writer
               </span>
@@ -126,7 +126,7 @@ function Login() {
             value === "Writer" &&
             <>
             <input
-                  className="textfield-Writer"
+                  className="textfield-Writer-email"
                   type="text"
                   id=""
                   placeholder="Email"
@@ -135,7 +135,7 @@ function Login() {
                   }
                 />
                 <input
-                  className="textfield-Writer"
+                  className="textfield-Writer-email"
                   type="text"
                   id=""
                   placeholder="Password"
@@ -144,7 +144,7 @@ function Login() {
                   }
                 />
                 <input
-              className="button-submit-sign"
+              className="button-submit-login"
               type="submit"
               value={"Login"}
               />

@@ -1,22 +1,32 @@
 import { Grid } from "@mui/material";
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import Footer from "../../../Components/Footer/Footer";
 import Navbar from "../../../Components/Navbar/Navbar";
 import "./Writer_Home.css";
+import { UserScript } from "../../../Redux/Slices/ScriptSlice";
 
 function Writer_Home() {
+
+  const [Email,setemail]=useState('');
+  
+  const dispatch =useDispatch();
   const navigate = useNavigate();
-  const { token, UserType } = useSelector((state) => state.auth);
+  
+  const { token, UserType,email } = useSelector((state) => state.auth);
 
   useEffect(() => {
+    setemail(email)
+    dispatch(UserScript(email));
+
     if (token === null) {
       navigate("/");
     } else if (UserType === "Director") {
       navigate("/Director_Home");
     }
-  }, [token]);
+  }, [token,email,Email]);
+  
   return (
     <>
     <Navbar/>

@@ -12,10 +12,10 @@ import { DirectorScript } from '../../../Redux/Slices/ScriptDirector';
 function Director_Home() {
 
   const {Scriptlist} =useSelector(state=>state.dScript.ScriptList)
-  const auth = useSelector((state)=>state.auth)
-
   const navigate=useNavigate();
   const dispatch =useDispatch();
+  
+  const auth = useSelector((state)=>state.auth)
 
 
   useEffect(() => {
@@ -54,7 +54,8 @@ function Director_Home() {
           </p>
         </Grid>
         <Grid item
-         md={"8.8"}>
+         md={"10.1"}
+         >
         <p className='director_Hd'>Choose Your Dream Script</p>
         </Grid>
         <Grid 

@@ -2,10 +2,10 @@ import "./Navbar.css";
 import React, { useEffect, useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
-import  Hamburger  from 'hamburger-react'
+import Hamburger from 'hamburger-react';
 import Grid from "@mui/material/Grid";
 
-// logo
+// logo import LogoutIcon from "@mui/icons-material/Logout";
 import imgprof from "../../Assets/Writer-home/prof.png";
 import Arrowdown from "../../Assets/Writer-home/Arrowdown.png";
 import Arrowup from "../../Assets/Writer-home/Arrowup.png";
@@ -13,8 +13,8 @@ import Updatepassword from "../../Assets/Writer-home/updatepassword.png";
 import customersupport from "../../Assets/Writer-home/customersupport.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { logOutUser } from "../../Redux/Slices/AuthSlice";
 import { removeScriptlistWriter } from "../../Redux/Slices/ScriptSlice";
+import {logOutUser } from "../../Redux/Slices/AuthSlice";
 
 const Navbar = () => {
   const { token, UserType } = useSelector((state) => state.auth);
@@ -47,7 +47,7 @@ const Navbar = () => {
     dispatch(logOutUser())
     setTimeout(()=>{
       dispatch(removeScriptlistWriter())
-    },100)
+    },50)
     }
 
     const [isOpen,setOpen] = useState(false)
@@ -56,11 +56,11 @@ const Navbar = () => {
     <>
       {
         screenWidth > 768 &&
-        <Grid container>
-        <Grid item md={3}>
+        <Grid container className="Grid-container">
+        <Grid item md={UserType === "Writer" ? "3.5" : "3" }>
           <h3 className="NAv-head">Script shop</h3>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={UserType === "Writer" ? "4.5" : "4"}>
           <nav className="NAV-a">
             <Link to={'/WriterHome'} style={{ color: "#53C352" }}>
               Home
@@ -69,7 +69,7 @@ const Navbar = () => {
             <a href="#">Contact Us</a>
           </nav>
         </Grid>
-        <Grid item md={3} position={'relative'}>
+        <Grid item md={UserType === "Writer" ? "4" : "4" } position={'relative'}>
           {token === null && (
             <div className="BTn-div">
               <Link to={"/Login"}>
@@ -107,7 +107,9 @@ const Navbar = () => {
                         height:'18.33px'
                       }}
                     />
+                    <Link to={'/profile'}>
                     <span>Profile</span>
+                    </Link>
                   </li>
                  <Link to={'/update-pass'} style={{textDecoration:'none'}}>
                   <li>
@@ -198,7 +200,7 @@ const Navbar = () => {
 {
   screenWidth < 769 &&
   <Grid container justifyContent={'flex-end'} >
-    <div className="nav-div-btn" onClick={()=>setclick(!click)} ><Hamburger  toggled={isOpen} toggle={setOpen} /></div>
+    <div className="nav-div-btn" onClick={()=>setclick(!click)} ><Hamburger toggled={isOpen} toggle={setOpen} /></div>
     
     {
      click &&
