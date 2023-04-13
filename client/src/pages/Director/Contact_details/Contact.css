@@ -14,8 +14,8 @@
   }
   .contacts-div{
     box-sizing: border-box;
-    height: 370px;
-    width: 516px;
+    height: 431px;
+    width: 616px;
     border-radius: 5px;
     background: #FEFEFF;
     border: 1px solid #53C352;
@@ -29,8 +29,15 @@ font-style: normal;
 font-weight: 500;
 font-size: 20px;
 }
+.info{
+  font-family: poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+}
 .info-contacts-div{
-  margin-top: 26px;
+  margin-top: 120px;
   padding-left: 17%;
 }
 .contactsimg{

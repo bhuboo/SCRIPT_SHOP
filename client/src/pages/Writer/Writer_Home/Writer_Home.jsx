@@ -1,27 +1,38 @@
 import { Grid } from "@mui/material";
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 // import Footer from "../../../Components/Footer/Footer";
 // import Navbar from "../../../Components/Navbar/Navbar";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, Link } from "react-router-dom";
+import Footer from "../../../Components/Footer/Footer";
+import Navbar from "../../../Components/Navbar/Navbar";
 import "./Writer_Home.css";
+import { UserScript } from "../../../Redux/Slices/ScriptSlice";
 
 function Writer_Home() {
 
-  const navigate=useNavigate();
-  const {token,UserType} =useSelector((state)=>state.auth)
+  const [Email,setemail]=useState('');
+  
+  const dispatch =useDispatch();
+  const navigate = useNavigate();
+  
+  const { token, UserType,email } = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    setemail(email)
+    dispatch(UserScript(email));
 
-  useEffect(()=>{
-    if(token === null){
-     navigate('/')
-    }else if(UserType === 'Director'){
-      navigate('/Director_Home')
+    if (token === null) {
+      navigate("/");
+    } else if (UserType === "Director") {
+      navigate("/Director_Home");
     }
-   },[token])
+  }, [token,email,Email]);
+  
   return (
     <>
       {/* <Navbar Writer /> */}
+    <Navbar/>
       <Grid container justifyContent={"center"}>
         <Grid
           item
@@ -64,8 +75,20 @@ function Writer_Home() {
             <button className="div2-3child">Analytics</button>
           {/* </div> */}
         </Grid>
-      </Grid>
       {/* <Footer />  */}
+          <div className="second-HW-div2">
+            <Link to={"/publish"}>
+              <button className="div2-1child">Publish Script</button>
+            </Link>
+            <Link to={"/my-script"}>
+              <button className="div2-2child">My Scripts</button>
+            </Link>
+            <Link to={"/analytics"}>
+              <button className="div2-3child">Analytics</button>
+            </Link>
+          </div>
+      </Grid>
+      <Footer/>
     </>
   );
 }

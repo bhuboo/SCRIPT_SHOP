@@ -45,7 +45,6 @@ const Home_G = () => {
               </div>
 
         </Grid>
-        </Grid>
 
     
 
@@ -57,13 +56,9 @@ const Home_G = () => {
         
          <Grid item
           className="map-grid-main"
-          display={"grid"}
-           md={12}
+           md="12"
           justifyContent={"center"}
-          // justifyItems={"center"}
-          
-          
-         >
+          >
 
           {Products.map((product)=>(
             <Card className='div-map-card'>
@@ -80,6 +75,7 @@ const Home_G = () => {
       
     
 
+          </Grid>
        
     </div>
 

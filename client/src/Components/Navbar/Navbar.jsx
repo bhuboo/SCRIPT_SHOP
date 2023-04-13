@@ -4,7 +4,6 @@ import { Link,useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import Hamburger from 'hamburger-react';
 import Grid from "@mui/material/Grid";
-
 // logo import LogoutIcon from "@mui/icons-material/Logout";
 import imgprof from "../../Assets/Writer-home/prof.png";
 import Arrowdown from "../../Assets/Writer-home/Arrowdown.png";
@@ -13,6 +12,7 @@ import Updatepassword from "../../Assets/Writer-home/updatepassword.png";
 import customersupport from "../../Assets/Writer-home/customersupport.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { removeScriptlistWriter } from "../../Redux/Slices/ScriptSlice";
 import {logOutUser } from "../../Redux/Slices/AuthSlice";
 
 const Navbar = () => {
@@ -44,6 +44,9 @@ const Navbar = () => {
 
   const handleLogout = () =>{
     dispatch(logOutUser())
+    setTimeout(()=>{
+      dispatch(removeScriptlistWriter())
+    },50)
     }
 
     const [isOpen,setOpen] = useState(false)
@@ -52,20 +55,20 @@ const Navbar = () => {
     <>
       {
         screenWidth > 768 &&
-        <Grid container>
-        <Grid item md={3}>
+        <Grid container className="Grid-container">
+        <Grid item md={UserType === "Writer" ? "3.5" : "3" }>
           <h3 className="NAv-head">Script shop</h3>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={UserType === "Writer" ? "4.5" : "4"}>
           <nav className="NAV-a">
-            <a href="#" style={{ color: "#53C352" }}>
+            <Link to={'/WriterHome'} style={{ color: "#53C352" }}>
               Home
-            </a>
+            </Link>
             <a href="#">Features</a>
             <a href="#">Contact Us</a>
           </nav>
         </Grid>
-        <Grid item md={3} position={'relative'}>
+        <Grid item md={UserType === "Writer" ? "4" : "4" } position={'relative'}>
           {token === null && (
             <div className="BTn-div">
               <Link to={"/Login"}>
@@ -88,6 +91,64 @@ const Navbar = () => {
                   />
                 </div>
                 <button className="Profile-Writer-button">Followers 100</button>
+              </div>
+              {
+                display &&
+              <div className="dropdown-list-W">
+                <ul>
+                  <li>
+                    <AccountCircleIcon
+                      sx={{
+                        color: "#ffffff",
+                        background: "#53C352",
+                        borderRadius: "50%",
+                        width:'15.83px',
+                        height:'18.33px'
+                      }}
+                    />
+                    <Link to={'/profile'}>
+                    <span>Profile</span>
+                    </Link>
+                  </li>
+                 <Link to={'/update-pass'} style={{textDecoration:'none'}}>
+                  <li>
+                    <img src={Updatepassword} alt="alr" />
+                    <span>Update Password</span>
+                  </li>
+                 </Link>
+                  <li>
+                    <img src={customersupport} alt="alr" />
+                    <span>Customer Support</span>
+                  </li>
+                  <li>
+                    <img src={customersupport} alt="alr" />
+                    <span>Privacy & Policy</span>
+                  </li>
+                  <li onClick={handleLogout}>
+                    <LogoutIcon
+                      sx={{
+                        color: "#53C352",
+                        width:'15.83px',
+                        height:'18.33px'
+                      }}
+                      />
+                    <span>Logout</span>
+                  </li>
+                </ul>
+              </div>
+              }
+            </>
+          )}
+          {UserType === "Director" && <>
+              <div className="Profile-Writer-head">
+                <div onClick={()=>setdisplay(!display)} className="Profile-Writer">
+                  <img src={imgprof} alt="img" className="Profile-Writer-img" />
+                  <img
+                    src={display? Arrowup : Arrowdown}
+                    alt="img"
+                    className="Profile-Writer-Arrow"
+                  />
+                </div>
               </div>
               {
                 display &&
@@ -131,8 +192,7 @@ const Navbar = () => {
               </div>
               }
             </>
-          )}
-          {UserType === "Director" && <button>Director</button>}
+            }
         </Grid>
       </Grid>
 }

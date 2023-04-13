@@ -7,6 +7,7 @@ import image from "../../Assets/Signup/signup(1).png";
 import image1 from "../../Assets/Signup/signup.png";
 import { useNavigate } from "react-router-dom";
 
+
 function Reg() {
   const dispatch = useDispatch();
   const navigate=useNavigate();
@@ -53,6 +54,7 @@ function Reg() {
     }
   }, [auth.UserType,navigate])
   
+
   return (
     <>
       <Grid container>
