@@ -17,7 +17,7 @@ margin-top: 40px;
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 500;
-font-size: 27px
+font-size: 25px
 }
 .main_card{
     display: flex;
@@ -68,11 +68,17 @@ border-radius: 5px;
     background: #53C352;
     border-radius: 5px;
 }
-@media (max-width: 1440px) {
-    .director_Hd{
-       margin-left: 40px;
-       font-size: 21px
+@media (max-width: 1600px) {
+    .dir_card{
+        width: 370px;
+        height: 340px;
     }
+    .purchase{
+        margin-left: 160px;
+        margin-top: 110px;
+    }
+}
+@media (max-width: 1440px) {
     .dir_card{
         width: 340px;
         height: 310px;
@@ -169,8 +175,10 @@ border-radius: 5px;
 } 
 
  @media (max-width: 768px) {
+      .first-G-para-WH {
+        width: 70%;
+      }
     .director_Hd{
-        margin-right:300px;
         font-size: 20px
      }
      .dir_card{
@@ -189,9 +197,14 @@ border-radius: 5px;
         margin-left: 110px;
     }
 }
+@media (max-width: 654px) {
+    .first-G-para-WH {
+        width: 80%;
+      }
+}
 @media (max-width: 630px) {
     .director_Hd{
-        margin-right:270px;
+        /* margin-right:270px; */
         font-size: 18px
      }
      .dir_card{
@@ -211,8 +224,10 @@ border-radius: 5px;
     }
 }
 @media (max-width: 590px) {
+    .first-G-para-WH {
+        width: 85%;
+      }
     .director_Hd{
-        margin-right:260px;
         font-size: 18px
      }
      .dir_card{
@@ -233,7 +248,6 @@ border-radius: 5px;
         font-size: 15px;
       }
     .director_Hd{
-        margin-right:220px;
         font-size: 17px
      }
      .dir_card{
@@ -254,7 +268,6 @@ border-radius: 5px;
       font-size: 15px;
     }
   .director_Hd{
-      margin-right:200px;
       font-size: 16px
    }
    .dir_card{
@@ -275,7 +288,6 @@ border-radius: 5px;
       font-size: 15px;
     }
   .director_Hd{
-      margin-right:200px;
       font-size: 16px
    }
    .dir_card{
@@ -292,7 +304,6 @@ border-radius: 5px;
       font-size: 15px;
     }
   .director_Hd{
-      margin-right:190px;
       font-size: 15px
    }
    .dir_card{
@@ -303,6 +314,12 @@ border-radius: 5px;
       margin-left: 30px;
   }
 }
+@media (max-width: 433px) {
+    .first-G-para-WH {
+        width: 90%;
+        font-size: 14px;
+      }
+    }
 @media (max-width: 425px) {
     .first-G-para-WH {
         width: 90%;
@@ -310,7 +327,7 @@ border-radius: 5px;
       }
     .director_Hd{
         margin-left:0px;
-        font-size: 17px
+        font-size: 15px;
      }
      .dir_card{
         width: 290px;
@@ -325,15 +342,34 @@ border-radius: 5px;
         margin-left:110px;
     }
 }
-/* @media (max-width: 375px) {
-    .director_Hd{
-        align-items: center;
-     }
+ @media (max-width: 375px) {
+        .first-G-para-WH {
+            width: 85%;
+            font-size: 14px;
+          }
+          .first-G-WH {
+            height: 276px;
 }
-
-@media (max-width: 320px) {
-    .director_Hd{
-        align-items: center;
-        margin-left: 40px;
-    }
-}   */
+ }
+ @media (max-width: 339px) {
+    .first-G-para-WH {
+        width: 85%;
+        font-size: 14px;
+      }
+      .first-G-WH {
+        height: 300px;
+}
+}
+@media (max-width: 325px) {
+    .first-G-para-WH {
+        width: 87%;
+        font-size: 14px;
+      }
+      .first-G-WH {
+        height: 320px;
+}
+.dir_card{
+    width: 270px;
+    height: 270px;
+}
+}   

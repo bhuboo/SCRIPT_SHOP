@@ -28,8 +28,7 @@ function Director_Home() {
           justifyItems={"center"}
           alignItems={"center"}
         >
-
-          <p className="first-G-para-WH">
+      <p className="first-G-para-WH">
             Lorem ipsum dolor sit amet consectetur. Habitant consectetur
             porttitor tincidunt sodales sed. Volutpat adipiscing diam porttitor
             arcu vulputate sed sit massa in. Amet sit est enim arcu purus.
@@ -41,7 +40,11 @@ function Director_Home() {
           </p>
         </Grid>
         <Grid item
-         md={"10.1"}
+         letterSpacing={"10.3"}
+        lg={"9.4"}
+         md={"10.6"}
+         sm={"9.2"}
+         xs={"7.6"}
          >
         <p className='director_Hd'>Choose Your Dream Script</p>
         </Grid>
