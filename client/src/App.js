@@ -13,6 +13,7 @@ import Director_Home from "./pages/Director/Director_Home/Director_Home";
 import Profile from "./pages/Writer/Profile/Profile";
 
 import AnalyticsW from './pages/Writer/Analytics/analytics';
+import NotFount from "./notFount";
 import { useEffect } from "react";
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
         <Route path="/" element={<Landingpage />} />
         <Route path="/signup" element={<Reg />} />
         <Route path="/Login" element={<Login />} />
-       {token && 
+       {token &&
         <Route path="/WriterHome" element={<Writer_Home/>} />
       }
       {token &&
@@ -49,6 +50,7 @@ function App() {
         <Route path="/my-script" element={<My_script />} />
         <Route path="/analytics" element={<AnalyticsW />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFount/>} />
       </Routes>
     </>
   );

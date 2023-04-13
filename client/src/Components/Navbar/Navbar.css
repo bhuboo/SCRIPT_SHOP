@@ -76,7 +76,7 @@
   width: 245px;
   height: 210px;
   left: -10%;
-  top: 100%;
+  top: 120%;
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-top: 10px;
@@ -96,13 +96,14 @@
   display: flex;
   align-items: center;
 }
-.dropdown-list-W ul li span {
+.dropdown-list-W ul li span,.dropdown-list-W ul li a {
   padding-left: 28px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   color: #7c7c7c;
+  text-decoration: none;
 }
 
 .mobile-view{

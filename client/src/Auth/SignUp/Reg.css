@@ -48,8 +48,8 @@
   margin-top: 24px;
 }
 .form-style {
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   margin-top: 25px;
   width: 300px;
 
@@ -62,10 +62,10 @@
   background: #ffffff;
   border: 1px solid #53c352;
   border-radius: 10px;
-  /* display: flex; */
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-left: 17px; */
+  padding-left: 17px;
   padding-right: 15px;
   cursor: pointer;
   transition: all 0.5s;
@@ -78,9 +78,9 @@
   background: #ffffff;
   border: 1px solid #53c352;
   border-radius: 10px;
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
-  /* padding-left: 30px; */
+  padding-left: 30px;
   padding-right: 15px;
   padding-top: 20px;
   transition: all 0.5s;

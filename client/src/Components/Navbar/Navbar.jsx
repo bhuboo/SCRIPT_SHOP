@@ -111,12 +111,12 @@ const Navbar = () => {
                     <span>Profile</span>
                     </Link>
                   </li>
-                 <Link to={'/update-pass'} style={{textDecoration:'none'}}>
                   <li>
                     <img src={Updatepassword} alt="alr" />
+                 <Link to={'/update-pass'} style={{textDecoration:'none'}}>
                     <span>Update Password</span>
-                  </li>
                  </Link>
+                  </li>
                   <li>
                     <img src={customersupport} alt="alr" />
                     <span>Customer Support</span>

@@ -12,13 +12,19 @@ function my_script() {
     <>
     <Navbar/>
         <p className='hdscript'>Your Scripts</p>
-      <Grid container>
+      <Grid container paddingBottom={'60px'}>
         <Grid 
          item 
          md={12} 
          className="main_card" 
          justifyContent={"center"}
         >
+          {
+            !Scriptlist && 
+             <div className='no-script'>
+              <h1 className='no-script-h1'>Your not Published any Script</h1>
+             </div> 
+          }
           {Scriptlist?.map((item,key) =>(
            <Card className='matrixcard'>
           <p className='matrixname'>{item.Moviename}</p>

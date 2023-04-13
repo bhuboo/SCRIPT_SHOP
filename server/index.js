@@ -13,7 +13,8 @@ const Scriptlist = require('./routes/director/scriptlist')
 const ScriptlistWriter = require('./routes/scripts/ScriptlistWriter.js')
 const ScriptlistDirecter = require('./routes/scripts/ScriptlistDirecter.js')
 const WriterUpass = require('./routes/scriptwriter/WriterUpass.js')
-
+const WriterProfile = require('./routes/scriptwriter/WriterProfile.js')
+const Stripe =require('./routes/Stripepayment/Stripepayment')
 
 const port= process.env.PORT || 5000;
 const uri =process.env.DB_URI;
@@ -29,6 +30,7 @@ app.use("/api/Sregister",scriptregister);
 app.use("/api/Slogin",scriptlogin);
 app.use("/api/Wscript",ScriptlistWriter);
 app.use("/api/WUpass",WriterUpass)
+app.use("/api/Wprofi",WriterProfile)
 
 // Director APIs
 app.use("/api/Dregister",directregister);
@@ -41,6 +43,9 @@ app.use("/api/Alogin",adminlogin);
 
 // Script Post Api
 app.use('/api/scriptpost',Scriptpost);
+
+// payment Api
+app.use('/api/stripe',Stripe);
 
 //welcome api
 app.get('/',(req,res)=>{
