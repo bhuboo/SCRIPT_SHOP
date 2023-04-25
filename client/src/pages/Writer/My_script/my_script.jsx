@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './my_script.css'
 import {Card,  Grid} from '@mui/material'
 import Navbar from '../../../Components/Navbar/Navbar'
 import Footer from '../../../Components/Footer/Footer'
 import { useSelector } from 'react-redux'
-function my_script() {
+function My_script() {
 
   const {Scriptlist} =useSelector(state=>state.script.ScriptList)
 
@@ -38,4 +38,4 @@ function my_script() {
   )
 }
 
-export default my_script
+export default My_script

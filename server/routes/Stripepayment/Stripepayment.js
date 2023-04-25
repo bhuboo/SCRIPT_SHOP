@@ -7,15 +7,16 @@ const stripe =Stripe(process.env.STRIPE_KEY)
 const router = express.Router();
 
 router.post('/create-checkout-session', async (req, res) => {
+  console.log(req.body.ViewScript);
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
           price_data: {
             currency: 'inr',
             product_data: {
-              name: 'T-shirt',
+              name: `Moviename:${req.body.ViewScript.Moviename}`,
             },
-            unit_amount: 2000,
+            unit_amount: 1000 * 100,
           },
           quantity: 1,
         },

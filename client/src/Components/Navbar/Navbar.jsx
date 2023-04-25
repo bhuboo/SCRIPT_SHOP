@@ -4,7 +4,6 @@ import { Link,useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import Hamburger from 'hamburger-react';
 import Grid from "@mui/material/Grid";
-
 // logo import LogoutIcon from "@mui/icons-material/Logout";
 import imgprof from "../../Assets/Writer-home/prof.png";
 import Arrowdown from "../../Assets/Writer-home/Arrowdown.png";

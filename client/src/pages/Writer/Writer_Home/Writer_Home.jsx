@@ -1,4 +1,6 @@
 import { Grid } from "@mui/material";
+// import Footer from "../../../Components/Footer/Footer";
+// import Navbar from "../../../Components/Navbar/Navbar";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
@@ -29,16 +31,17 @@ function Writer_Home() {
   
   return (
     <>
+      {/* <Navbar Writer /> */}
     <Navbar/>
       <Grid container justifyContent={"center"}>
         <Grid
           item
-          className="first-G-WH"
+          className="first-G-H"
           display={"grid"}
           justifyItems={"center"}
           alignItems={"center"}
         >
-          <p className="first-G-para-WH">
+          <p className="first-G-para-H">
             Lorem ipsum dolor sit amet consectetur. Habitant consectetur
             porttitor tincidunt sodales sed. Volutpat adipiscing diam porttitor
             arcu vulputate sed sit massa in. Amet sit est enim arcu purus.
@@ -53,12 +56,26 @@ function Writer_Home() {
           item
           display={"flex"}
           flexDirection={"column"}
-          md={"8"}
-          paddingBottom={"200px"}
+          md={"8.2"}
+          paddingBottom={"20px"}
         >
           <div className="second-HW-div">
             <h3 className="second-G-head-HW">Your Dashboard</h3>
           </div>
+          </Grid>
+        <Grid 
+        item 
+        md={12} 
+        className="second-HW-div2" 
+        justifyContent={"center"}
+        >
+          {/* <div className="second-HW-div2"> */}
+            <button className="div2-1child">Publish Script</button>
+            <button className="div2-2child">My Scripts</button>
+            <button className="div2-3child">Analytics</button>
+          {/* </div> */}
+        </Grid>
+      {/* <Footer />  */}
           <div className="second-HW-div2">
             <Link to={"/publish"}>
               <button className="div2-1child">Publish Script</button>
@@ -70,7 +87,6 @@ function Writer_Home() {
               <button className="div2-3child">Analytics</button>
             </Link>
           </div>
-        </Grid>
       </Grid>
       <Footer/>
     </>

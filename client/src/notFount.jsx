@@ -3,28 +3,26 @@ import { useSelector } from "react-redux";
 
 const url = "http://localhost:5000/api";
 
-const PayButton = () => {
+const PayButton = ({ViewScript}) => {
+
+  const {_id,} = useSelector(state=>state.auth)
   const handleCheckout = () => {
     axios.post(`${url}/stripe/create-checkout-session`,
       {
-        "source": "tok_19oF...IZNC",
-        "capture": false,
-        "amount": 33000,
-        "currency": "EUR",
-        "description": "Some description",
-        "receipt_email": "my@email.com",
-        "metadata": {
-        }
+        ViewScript,
+        userId: _id,
     }).then((res) => {
       if(res.data.url){
       window.location.href = res.data.url;
       }
       })
       .catch((err) => console.log(err.message));
+    // console.log(ViewScript);
+    // console.log(_id);
   };
   return (
     <>
-      <button onClick={() => handleCheckout()}>Check Out</button>
+      <button className='paybtn' onClick={() => handleCheckout()}>Pay</button>
     </>
   );
 };

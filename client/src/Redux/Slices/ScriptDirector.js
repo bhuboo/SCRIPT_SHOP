@@ -7,6 +7,7 @@ const initialState ={
     ScriptError:"",
     ScriptList:[],
     ScriptListError:"",
+    viewScript:[],
 }
 
 export const DirectorScript = createAsyncThunk(
@@ -47,6 +48,11 @@ const ScripDirectortSlice =createSlice({
                 ScriptStatus:"",
                 ScriptSucess:"",
             }
+        },
+        viewScript(state,action){
+            const item = action.payload;
+
+            state.viewScript = [item]
         }
     },
     extraReducers:(builder)=>{
@@ -72,5 +78,5 @@ const ScripDirectortSlice =createSlice({
     }
 })
 
-
+export const {viewScript} =ScripDirectortSlice.actions;
 export default ScripDirectortSlice.reducer;

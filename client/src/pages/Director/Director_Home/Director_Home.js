@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
-import { DirectorScript } from '../../../Redux/Slices/ScriptDirector';
+import { DirectorScript, viewScript } from '../../../Redux/Slices/ScriptDirector';
 
 
 function Director_Home() {
@@ -30,6 +30,11 @@ function Director_Home() {
       navigate('/')
     }
   }, [auth.UserType,navigate])
+
+  const handleClick = (product) =>{
+    dispatch(viewScript(product));
+    navigate('/purchase')
+  }
   return (
     <>
     <Navbar/>
@@ -41,8 +46,7 @@ function Director_Home() {
           justifyItems={"center"}
           alignItems={"center"}
         >
-
-          <p className="first-G-para-WH">
+      <p className="first-G-para-WH">
             Lorem ipsum dolor sit amet consectetur. Habitant consectetur
             porttitor tincidunt sodales sed. Volutpat adipiscing diam porttitor
             arcu vulputate sed sit massa in. Amet sit est enim arcu purus.
@@ -54,7 +58,11 @@ function Director_Home() {
           </p>
         </Grid>
         <Grid item
-         md={"10.1"}
+         letterSpacing={"10.3"}
+        lg={"9.4"}
+         md={"10.6"}
+         sm={"9.2"}
+         xs={"7.6"}
          >
         <p className='director_Hd'>Choose Your Dream Script</p>
         </Grid>
@@ -68,7 +76,7 @@ function Director_Home() {
            <Card className='dir_card'>
           <p className='home_name'>{product.Moviename}</p>
           <button className='alex_btn'>By Alex</button>
-          <button className='purchase'>Purcharse</button>
+          <button onClick={()=>handleClick(product)} className='purchase'>Purcharse</button>
         </Card>
       )  )}
         </Grid>

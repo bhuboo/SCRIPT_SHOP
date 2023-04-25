@@ -1,3 +1,8 @@
+.emaierror{
+  font-size: 12px;
+  color: red;
+  text-align: center;
+}
 .frame-1 {
   background: rgba(83, 195, 82, 0.62);
   height: 1024px;

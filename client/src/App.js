@@ -9,8 +9,11 @@ import Reg from "./Auth/SignUp/Reg";
 import Update_pass from "./Auth/Update Password/Update_pass";
 import Publish from "./pages/Writer/Publish/Publish";
 import Writer_Home from "./pages/Writer/Writer_Home/Writer_Home";
+import Purchase_page from "./pages/Director/Purchase_page/Purchase_page";
+
 import Director_Home from "./pages/Director/Director_Home/Director_Home";
 import Profile from "./pages/Writer/Profile/Profile";
+import Contact from "./pages/Director/Contact_details/Contact";
 
 import AnalyticsW from './pages/Writer/Analytics/analytics';
 import NotFount from "./notFount";
@@ -51,6 +54,8 @@ function App() {
         <Route path="/analytics" element={<AnalyticsW />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFount/>} />
+        <Route path="/purchase" element={<Purchase_page />} />
+        <Route path="/contact_details" element={<Contact/>} />
       </Routes>
     </>
   );

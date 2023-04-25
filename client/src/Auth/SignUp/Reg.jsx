@@ -2,21 +2,27 @@ import React, { useEffect, useState } from "react";
 import "./Reg.css";
 import { Grid } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import {registerUser,registerDirector} from "../../Redux/Slices/AuthSlice"
+import { registerUser, registerDirector } from "../../Redux/Slices/AuthSlice";
 import image from "../../Assets/Signup/signup(1).png";
 import image1 from "../../Assets/Signup/signup.png";
 import { useNavigate } from "react-router-dom";
 
-
 function Reg() {
   const dispatch = useDispatch();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  const auth = useSelector((state)=>state.auth)
+  const auth = useSelector((state) => state.auth);
 
   const [display, setDisplay] = useState(false);
   const [value, setvalue] = useState("Writer");
   const [Writer, setWriter] = useState({
+    Username: "",
+    Email: "",
+    Password: "",
+    ConfirmPassword: "",
+  });
+
+  const [errors, setErrors] = useState({
     Username: "",
     Email: "",
     Password: "",
@@ -30,30 +36,66 @@ function Reg() {
     ConfirmPassword: "",
   });
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    if(value === "Writer"){
-      function handleSubmitWriter(e){
-        dispatch(registerUser(Writer))
-      }
-      handleSubmitWriter(e)
-    }else if(value === "Director"){
-      function handleSubmitDirector(e){
-        dispatch(registerDirector(Director))
-      }
-      handleSubmitDirector(e)
+  console.log(Writer.Password);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (value === "Writer") {
+      const validate = () => {
+        const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g;
+        let upperCaseLetters = /[A-Z]/g;
+        let isValid = true;
+        let error = {};
+        if (!Writer.Username) {
+          error.Username = "Username Not be empty";
+          isValid = false;
+        }
+        if(!Writer.Email){
+          error.Email ="Email not be empty";
+          isValid = false;
+        }else if(!regEx.test(Writer.Email)){
+          error.Email = "You have entered an invalid email address!";
+          isValid = false;
+        }
+        if(!Writer.Password){
+          error.Password = "Password Not be empty";
+          isValid = false;
+        }else if(Writer.Password.length + 1 <= 8){
+          error.Password = "Password Must Be 8 Charecter";
+          isValid = false;
+        }else if(!Writer.Password.match(upperCaseLetters)){
+          error.Password = "Passwod Must include UpperCaseLetter";
+          isValid = false;
+        }
+        if(!Writer.ConfirmPassword){
+          error.ConfirmPassword = "Confirm Password Not be Empty";
+          isValid = false;
+        }
+        setErrors(error)
+        return isValid;
+      };
+      function handleSubmitWriter(e) {
+        validate();
+        if(validate){
+          dispatch(registerUser(Writer));
+        }
+      }
+      handleSubmitWriter(e);
+    } else if (value === "Director") {
+      function handleSubmitDirector(e) {
+        dispatch(registerDirector(Director));
+      }
+      handleSubmitDirector(e);
     }
-  }
+  };
 
   useEffect(() => {
-    if(auth.UserType === "Writer"){
-      navigate('/WriterHome')
-    }else if(auth.UserType === "Director"){
-      navigate('/Director_Home')
+    if (auth.UserType === "Writer") {
+      navigate("/WriterHome");
+    } else if (auth.UserType === "Director") {
+      navigate("/Director_Home");
     }
-  }, [auth.UserType,navigate])
-  
+  }, [auth.UserType, navigate]);
 
   return (
     <>
@@ -61,12 +103,9 @@ function Reg() {
         <Grid
           className="Grid-First"
           item
-        
           md="6"
-          
           xs="12"
           justifyContent={"center"}
-          
           display={"grid"}
         >
           <div className="first-div-g">
@@ -84,14 +123,8 @@ function Reg() {
         <Grid
           className="Grid-Second"
           item
-          
           md="6"
-        
           xs="12"
-          
-
-        
-          
           justifyItems={"center"}
           alignContent={"center"}
           display={"grid"}
@@ -100,10 +133,7 @@ function Reg() {
           <h1 className="heading-second-g">
             {value === "Director" ? "Director Sign up" : "Writer Sign up"}
           </h1>
-          <form
-            onSubmit={handleSubmit}
-            className="form-style"
-          >
+          <form onSubmit={handleSubmit} className="form-style">
             <div
               onClick={() => setDisplay(!display)}
               className={display ? "div-form1" : "div-form"}
@@ -141,6 +171,9 @@ function Reg() {
                     setWriter({ ...Writer, Username: e.target.value })
                   }
                 />
+                {errors.Username &&
+                <h1 className="emaierror">{errors.Username}</h1>
+                }
                 <input
                   className="textfield-Writer"
                   type="text"
@@ -150,6 +183,9 @@ function Reg() {
                     setWriter({ ...Writer, Email: e.target.value })
                   }
                 />
+                {errors.Email &&
+                <h1 className="emaierror">{errors.Email}</h1>
+                }
                 <input
                   className="textfield-Writer"
                   type="text"
@@ -159,6 +195,9 @@ function Reg() {
                     setWriter({ ...Writer, Password: e.target.value })
                   }
                 />
+                 {errors.Password &&
+                <h1 className="emaierror">{errors.Password}</h1>
+                }
                 <input
                   className="textfield-Writer"
                   type="text"
@@ -168,6 +207,9 @@ function Reg() {
                     setWriter({ ...Writer, ConfirmPassword: e.target.value })
                   }
                 />
+                 {errors.ConfirmPassword &&
+                <h1 className="emaierror">{errors.ConfirmPassword}</h1>
+                }
               </>
             )}
             {value === "Director" && (

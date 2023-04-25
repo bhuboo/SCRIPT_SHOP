@@ -6,7 +6,6 @@ import Landingimg from '../../Assets/Landing-img/landimg.png'
 import Grid from '@mui/material/Grid';
 import Products from './Product.json'
 import { Card } from '@mui/material';
-import PayButton from '../../notFount';
 
 const Home_G = () => {
   return (
@@ -27,7 +26,6 @@ const Home_G = () => {
            <div className='home-div-first'> 
             <p className='home-div-para' >Lorem ipsum dolor sit amet consectetur. Nisl ut lectus volutpat a urnac at egestas egestas. Arcu quis est sit aliquam egestas purus pharetra risus consectetur. Enim in leo scelerisque feugiat nisl nis aenean. Enim egestas inunc tristique integer interdum.</p>
              <button className='land-first-homebtn'>Publish Your First Script</button>
-             <PayButton/>
            </div>
 
         </Grid>
@@ -86,4 +84,4 @@ const Home_G = () => {
   )
 }
 
-export default Home_G
+export default Home_G;
