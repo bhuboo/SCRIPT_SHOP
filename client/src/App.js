@@ -21,7 +21,7 @@ import { useEffect } from "react";
 
 function App() {
 
-  const {token,UserType} =useSelector((state)=>state.auth)
+  const {token,UserType} = useSelector((state)=>state.auth)
 
   const navigate = useNavigate();
   
