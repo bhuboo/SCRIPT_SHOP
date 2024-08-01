@@ -38,7 +38,7 @@ export const registerDirector = createAsyncThunk(
     "auth/registerDirector",
     async (values,{rejectWithValue})=>{
         try {
-            const token =await axios.post(`http://localhost:5000/api/Dregister`,{
+            const token =await axios.post(`https://script-shop.onrender.com/api/Dregister`,{
                 Username: values.Username,
                 Email: values.Email,
                 Password: values.Password,
@@ -60,7 +60,7 @@ export const loginDirector = createAsyncThunk(
     "auth/loginDirector",
     async (values,{rejectWithValue})=>{
         try {
-            const token =await axios.post(`http://localhost:5000/api/Dlogin`,{
+            const token =await axios.post(`https://script-shop.onrender.com/api/Dlogin`,{
                 Email: values.Email,
                 Password: values.Password,
             });
@@ -81,7 +81,7 @@ export const loginWriter = createAsyncThunk(
     "auth/loginWriter",
     async (values,{rejectWithValue})=>{
         try {
-            const token =await axios.post(`http://localhost:5000/api/Slogin`,{
+            const token =await axios.post(`https://script-shop.onrender.com/api/Slogin`,{
                 Email: values.Email,
                 Password: values.Password,
             });
