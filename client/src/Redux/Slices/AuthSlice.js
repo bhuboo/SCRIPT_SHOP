@@ -16,7 +16,7 @@ export const registerUser = createAsyncThunk(
     "auth/registerUser",
     async (values,{rejectWithValue})=>{
         try {
-            const token =await axios.post(`http://localhost:5000/api/Sregister`,{
+            const token =await axios.post(`https://script-shop.onrender.com/api/Sregister`,{
                 Username: values.Username,
                 Email: values.Email,
                 Password: values.Password,
