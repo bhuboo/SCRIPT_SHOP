@@ -14,7 +14,7 @@ export const DirectorScript = createAsyncThunk(
     "Dscript,DirectorScript",
     async (values,{rejectWithValue})=>{
         try {
-            let Data = await axios.get(`http://localhost:5000/api/Dscript`)
+            let Data = await axios.get(`https://script-shop.onrender.com/api/Dscript`)
 
             return Data.data
 
