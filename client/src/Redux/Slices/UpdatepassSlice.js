@@ -13,7 +13,7 @@ export const Updatepass = createAsyncThunk(
     async (values,{rejectWithValue})=>{
         try {
             
-            const Data = await axios.patch(`http://localhost:5000/api/WUpass`,{
+            const Data = await axios.patch(`https://script-shop.onrender.com/api/WUpass`,{
                 Currentpassword: values.Currentpassword,
                 Newpassword: values.Newpassword,
                 Confirmpassword: values.Confirmpassword,
