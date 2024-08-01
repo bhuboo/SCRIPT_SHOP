@@ -13,7 +13,7 @@ export const ScriptUpload= createAsyncThunk(
     "script/ScriptUpload",
     async (values,{rejectWithValue})=>{
         try {
-            const Data =await axios.post(`http://localhost:5000/api/scriptpost`,{
+            const Data =await axios.post(`https://script-shop.onrender.com/api/scriptpost`,{
                 Moviename: values.MovieName,
                 Synopsis: values.Synopsis,
                 Genre: values.Genre,
