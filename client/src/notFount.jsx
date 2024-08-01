@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const url = "http://localhost:5000/api";
+const url = "https://script-shop.onrender.com/api";
 
 const PayButton = ({ViewScript}) => {
 
