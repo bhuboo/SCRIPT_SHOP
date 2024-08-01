@@ -13,7 +13,7 @@ export const Updateprofile = createAsyncThunk(
     async (values,{rejectWithValue})=>{
         try {
             
-            const Data = await axios.patch(`http://localhost:5000/api/Wprofi`,{
+            const Data = await axios.patch(`https://script-shop.onrender.com/api/Wprofi`,{
                 image: values.image,
                 Username: values.Username,
                 Businessmail: values.Businessmail,
