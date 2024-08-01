@@ -35,7 +35,7 @@ export const UserScript = createAsyncThunk(
     "script,UserScript",
     async (values,{rejectWithValue})=>{
         try {
-            let Data = await axios.get(`http://localhost:5000/api/Wscript/${values}`)
+            let Data = await axios.get(`https://script-shop.onrender.com/api/Wscript/${values}`)
 
             return Data.data
 
